@@ -1,0 +1,21 @@
+{
+  "name": "lotto_village",
+  "version": "1.0.0",
+  "description": "server for lotto_village server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "Express",
+    "MariaDB"
+  ],
+  "author": "JJSoft",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5"
+  }
+}
