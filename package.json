@@ -16,10 +16,11 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.15.4",
-    "express-session": "^1.15.5"
+    "express-session": "^1.15.5",
+    "pm2": "^2.6.1"
   },
   "repository": {
-  "type": "git",
-  "url": "git://github.com/jung2929/LottoVillage.git"
-}
+    "type": "git",
+    "url": "git://github.com/jung2929/LottoVillage.git"
+  }
 }
