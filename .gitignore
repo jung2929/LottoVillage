@@ -1,3 +1,6 @@
+# Database Config
+config/maria.pool.js
+
 # Logs
 logs
 *.log
@@ -56,6 +59,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-# Database Config
-config/
