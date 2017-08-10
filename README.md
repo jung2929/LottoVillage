@@ -1,11 +1,11 @@
-# LottoVillage
+### LottoVillage
 
-로또빌리지 노드서버
+## 로또빌리지 노드서버
 
 
-# config/maria.pool.js
+### config/maria.pool.js
 
-var maria = require('mysql');
+var maria = require('mysql'); 
 var pool = maria.createPool({
     //밑에 설정 조건들, 다 Default 라서 주석
     //connectionLimit: 10,
