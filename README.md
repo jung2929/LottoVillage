@@ -1,10 +1,9 @@
-### LottoVillage
+LottoVillage - 로또빌리지 노드서버
+============
 
-## 로또빌리지 노드서버
-
-
-### config/maria.pool.js
-
+config/maria.pool.js
+-----------------
+<pre><code>
 var maria = require('mysql');
 var pool = maria.createPool({
     //밑에 설정 조건들, 다 Default 라서 주석
@@ -18,3 +17,4 @@ var pool = maria.createPool({
     database: '디비명 적기'
 });
 module.exports = pool;
+</code></pre>
