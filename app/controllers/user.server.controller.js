@@ -1,5 +1,5 @@
 exports.render = function (req, res) {
-    if (req.session.visit) {
+    /*if (req.session.visit) {
         req.session.lastVisit = req.session.visit;
         req.session.visit = new Date();
     }
@@ -9,9 +9,9 @@ exports.render = function (req, res) {
 
     if (req.session.lastVisit !== undefined) {
         console.log('마지막접속시간 : ' + req.session.lastVisit)
-    }
+    }*/
 
-    var pool = require('../../config/maria.pool');
+    var pool = require(process.cwd() + '/config/maria.pool');
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: 'SELECT PHONE_NO \

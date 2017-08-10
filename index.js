@@ -6,7 +6,7 @@
 * body-parser = 요청 데이터 처리
 * method-override = HTTP 동사 기본 지원 기능 제공 (DELETE, PUT ..)
 */
-var express = require('./config/express');
+var express = require(process.cwd() + '/config/express');
 var app = express();
 app.listen(3000);
 module.exports = app;

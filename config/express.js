@@ -28,12 +28,12 @@ module.exports = function () {
         secret: 'developmentSessionSecret'
     }));
 
-    app.set('views', './app/views');
+    app.set('views', process.cwd() + '/app/views');
     app.set('view engine', 'ejs');
 
-    require('../app/routes/index.server.route')(app);
-    require('../app/routes/user.server.route')(app);
+    require(process.cwd() + '/app/routes/index.server.route')(app);
+    require(process.cwd() + '/app/routes/user.server.route')(app);
 
-    app.use(express.static('./public'));
+    app.use(express.static(process.cwd() + '/public'));
     return app;
 };
