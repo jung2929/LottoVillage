@@ -1,7 +1,7 @@
 var express = require('express'),
     //morgan = require('morgan'),
     //compression = require('compression'),
-    //bodyParser = require('body-parser'),
+    bodyParser = require('body-parser'),
     //methodOverride = require('method-override'),
     expressSession = require('express-session');
 
@@ -18,13 +18,13 @@ module.exports = function () {
         extended: true
     }));*/
 
-    //app.use(bodyParser.json());
+    app.use(bodyParser.json());
 
     //app.use(methodOverride());
 
     app.use(expressSession({
         saveUninitialized: true,
-        resave: true,
+        resave: false,
         secret: 'developmentSessionSecret'
     }));
 
