@@ -3,7 +3,7 @@ module.exports = function(app){
 	app.route('/login')
 		.get(user.login);
 	app.route('/logout')
-		.get(user.logout)
+		.get(user.logout);
 	app.route('/register')
 		.post(user.register);
 };
