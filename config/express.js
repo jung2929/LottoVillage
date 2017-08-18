@@ -40,19 +40,19 @@ module.exports = function () {
     app.use(expressSession({
         key:'jjsoft_lotto_village',
         cookie:{
-            maxAge:60*10000
+            maxAge:600*1000
         },
         saveUninitialized: true,
         resave: false,
         secret: 'developmentSessionSecret'
     }));
 
-    app.set('views', process.cwd() + '/app/views');
+    app.set('views', __dirname + '\\../app/views');
     app.set('view engine', 'ejs');
 
-    require(process.cwd() + '/app/routes/index.server.route')(app);
-    require(process.cwd() + '/app/routes/user.server.route')(app);
+    require(__dirname + '\\../app/routes/index.server.route')(app);
+    require(__dirname + '\\../app/routes/user.server.route')(app);
 
-    app.use(express.static(process.cwd() + '/public'));
+    app.use(express.static(__dirname + '\\../public'));
     return app;
 };

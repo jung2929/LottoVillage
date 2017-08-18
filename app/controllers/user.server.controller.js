@@ -1,3 +1,6 @@
+var logger = require(__dirname + '\\../../config/winston');
+
+
 exports.login = function (req, res) {
     /*if (req.session.visit) {
         req.session.lastVisit = req.session.visit;
@@ -15,8 +18,9 @@ exports.login = function (req, res) {
     console.log(req.query.phone_no);
     console.log(req.query.password);
     console.log(req.cookies.jjsoft_lotto_village);
+    logger().info('로그인 - 전화번호:' + req.query.phone_no);
 
-    var pool = require(process.cwd() + '/config/maria.pool');
+    var pool = require(__dirname + '\\../../config/maria.pool');
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: 'SELECT PHONE_NO \
@@ -31,7 +35,7 @@ exports.login = function (req, res) {
 
                 if (error) throw error;
 
-                if (!results.length) return res.json({isSuccess: false, errorMessage: "해당 유저를 찾을 수 없습니다."});
+                if (!results.length) return res.json({isSuccess: false, errorMessage: "전화번호 혹은 비밀번호가 일치하지 않습니다."});
 
                 req.session.phone_no = req.query.phone_no;
                 req.session.password = req.query.password;
@@ -48,7 +52,7 @@ exports.login = function (req, res) {
                 //req.session.cookie=req.cookies;
                 //console.log(req.cookies.jjsoft_lotto_village);
                 //console.log(res.cookie);
-                console.log(req.session);
+                //console.log(req.session);
 
                 res.json({isSuccess: true, errorMessage: ""});
             });
@@ -62,8 +66,10 @@ exports.logout = function (req, res) {
     console.log(req.cookies);
     console.log(req.session);
     if (req.session.id === undefined || req.session.password === undefined) {
+        logger().info('쿠키/세션 내역 없는데 로그아웃 시도 흔적');
         return res.json({isSuccess: false, errorMessage: "로그인된 내역이 없습니다."});
     }
+    logger().info('로그아웃 - 전화번호:' + req.session.phone_no);
     req.session.destroy();
     res.clearCookie('jjsoft_lotto_village');
     res.json({isSuccess: true, errorMessage: "로그아웃 되었습니다."});
@@ -72,8 +78,9 @@ exports.logout = function (req, res) {
 exports.register = function (req, res) {
     console.log(req.body);
     console.log(req.body.name);
+    console.log(req.body.password);
+    console.log(req.body.password_confirm);
+    console.log(req.body.phone_number);
 
-    res.render('index', {
-        title: "회원가입"
-    });
+    return res.json({isSuccess: false, errorMessage: "틀렸슴."});
 };
