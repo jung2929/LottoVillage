@@ -51,6 +51,7 @@ module.exports = function () {
     app.set('view engine', 'ejs');
 
     require(__dirname + '\\../app/routes/index.server.route')(app);
+    require(__dirname + '\\../app/routes/participation.server.route')(app);
     require(__dirname + '\\../app/routes/user.server.route')(app);
 
     app.use(express.static(__dirname + '\\../public'));
