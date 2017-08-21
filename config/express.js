@@ -13,9 +13,9 @@ var express = require('express'),
     //morgan = require('morgan'),
     compression = require('compression'),
     bodyParser = require('body-parser'),
-    methodOverride = require('method-override'),
-    expressSession = require('express-session'),
-    cookieParser = require('cookie-parser');
+    methodOverride = require('method-override');
+    /*expressSession = require('express-session'),
+    cookieParser = require('cookie-parser');*/
 
 module.exports = function () {
     var app = express();
@@ -36,16 +36,15 @@ module.exports = function () {
 
     app.use(methodOverride());
 
-    app.use(cookieParser());
+    /*app.use(cookieParser());
     app.use(expressSession({
-        key:'jjsoft_lotto_village',
         cookie:{
             maxAge:600*1000
         },
         saveUninitialized: true,
         resave: false,
         secret: 'developmentSessionSecret'
-    }));
+    }));*/
 
     app.set('views', __dirname + '\\../app/views');
     app.set('view engine', 'ejs');
