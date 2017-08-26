@@ -23,8 +23,8 @@ exports.login = function (req, res) {
         }
     }
 
-    if (requestPhoneNumber === undefined) return res.json({isSuccess: false, errorMessage: "전화번호를 입력해주세요."});
-    if (requestPassword === undefined) return res.json({isSuccess: false, errorMessage: "비밀번호를 입력해주세요."});
+    if (!requestPhoneNumber) return res.json({isSuccess: false, errorMessage: "전화번호를 입력해주세요."});
+    if (!requestPassword) return res.json({isSuccess: false, errorMessage: "비밀번호를 입력해주세요."});
 
     requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
     requestPassword = requestPassword.replace(/(\s*)/g, "");
@@ -99,10 +99,10 @@ exports.register = function (req, res) {
         requestPasswordConfirm = req.body.password_confirm,
         requestPhoneNumber = req.body.phone_number;
 
-    if (requestName === undefined) return res.json({isSuccess: false, errorMessage: "이름을 입력해주세요."});
-    if (requestPassword === undefined) return res.json({isSuccess: false, errorMessage: "비밀번호를 입력해주세요."});
-    if (requestPasswordConfirm === undefined) return res.json({isSuccess: false, errorMessage: "비밀번호확인값을 입력해주세요."});
-    if (requestPhoneNumber === undefined) return res.json({isSuccess: false, errorMessage: "전화번호를 입력해주세요."});
+    if (!requestName) return res.json({isSuccess: false, errorMessage: "이름을 입력해주세요."});
+    if (!requestPassword) return res.json({isSuccess: false, errorMessage: "비밀번호를 입력해주세요."});
+    if (!requestPasswordConfirm) return res.json({isSuccess: false, errorMessage: "비밀번호확인값을 입력해주세요."});
+    if (!requestPhoneNumber) return res.json({isSuccess: false, errorMessage: "전화번호를 입력해주세요."});
 
     requestName = requestName.replace(/(\s*)/g, "");
     requestPassword = requestPassword.replace(/(\s*)/g, "");

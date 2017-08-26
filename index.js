@@ -1,6 +1,8 @@
 var express = require(__dirname + '/config/express'),
     schedule = require('node-schedule'),
+    scheduleController = require(__dirname + '/app/controllers/schedule.server.controller'),
     logger = require(__dirname + '/config/winston');
+
 // *    *    *    *    *    *
 // ┬    ┬    ┬    ┬    ┬    ┬
 // │    │    │    │    │    |
@@ -10,17 +12,16 @@ var express = require(__dirname + '/config/express'),
 // │    │    └─────────────── hour (0 - 23)
 // │    └──────────────────── minute (0 - 59)
 // └───────────────────────── second (0 - 59, OPTIONAL)
-
 schedule.scheduleJob('0 * * * *', function () {
-    logger().info('매시 0분에 울리는 스케쥴러 작동');
+    scheduleController.drawLottery('1', '170823', '04');
 });
 
 schedule.scheduleJob('0 */6 * * *', function () {
-    logger().info('6시간마다 울리는 스케쥴러 작동');
+    scheduleController.everySixHour();
 });
 
 schedule.scheduleJob('0 */12 * * *', function () {
-    logger().info('12시간마다 울리는 스케쥴러 작동');
+    scheduleController.everyTwelveHour();
 });
 
 var app = express();
