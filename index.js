@@ -1,9 +1,8 @@
 var express = require(__dirname + '/config/express'),
     schedule = require('node-schedule'),
-    scheduleController = require(__dirname + '/app/controllers/schedule.server.controller'),
-    logger = require(__dirname + '/config/winston');
+    scheduleController = require(__dirname + '/app/controllers/schedule.server.controller');
 
-// *    *    *    *    *    *
+// *     *     *     *     *     *
 // ┬    ┬    ┬    ┬    ┬    ┬
 // │    │    │    │    │    |
 // │    │    │    │    │    └ day of week (0 - 7) (0 or 7 is Sun)
@@ -12,9 +11,9 @@ var express = require(__dirname + '/config/express'),
 // │    │    └─────────────── hour (0 - 23)
 // │    └──────────────────── minute (0 - 59)
 // └───────────────────────── second (0 - 59, OPTIONAL)
-schedule.scheduleJob('0 * * * *', function () {
-    scheduleController.drawLottery('1', '170823', '04');
-});
+/*schedule.scheduleJob('0 * * * *', function () {
+    scheduleController.drawLottery('1', '170824', '16');
+});*/
 
 schedule.scheduleJob('0 */6 * * *', function () {
     scheduleController.everySixHour();
@@ -23,6 +22,15 @@ schedule.scheduleJob('0 */6 * * *', function () {
 schedule.scheduleJob('0 */12 * * *', function () {
     scheduleController.everyTwelveHour();
 });
+
+/*schedule.scheduleJob('0 0 * * 7', function () {
+    scheduleController.everySunday();
+});*/
+
+for (var i = 700; i < 769; i++) {
+    scheduleController.everySunday(i);
+}
+//scheduleController.everySunday(315);
 
 var app = express();
 app.listen(3000);
