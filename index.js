@@ -1,6 +1,7 @@
-var express = require(__dirname + '/config/express'),
+var express = require(process.cwd() + '/config/express'),
     schedule = require('node-schedule'),
-    scheduleController = require(__dirname + '/app/controllers/schedule.server.controller');
+    scheduleController = require(process.cwd() + '/app/controllers/schedule.server.controller'),
+    logger = require(process.cwd() + '/config/winston');
 
 // *     *     *     *     *     *
 // ┬    ┬    ┬    ┬    ┬    ┬
@@ -30,4 +31,4 @@ schedule.scheduleJob('0 0 * * 4', function () {
 var app = express();
 app.listen(3000);
 module.exports = app;
-console.log('Server Running 3000 Port');
+logger().info('로또빌리지 서버 시작');

@@ -46,13 +46,13 @@ module.exports = function () {
         secret: 'developmentSessionSecret'
     }));*/
 
-    app.set('views', __dirname + '\\../app/views');
+    app.set('views', process.cwd() + '/app/views');
     app.set('view engine', 'ejs');
 
-    require(__dirname + '\\../app/routes/index.server.route')(app);
-    require(__dirname + '\\../app/routes/participation.server.route')(app);
-    require(__dirname + '\\../app/routes/user.server.route')(app);
+    require(process.cwd() + '/app/routes/index.server.route')(app);
+    require(process.cwd() + '/app/routes/participation.server.route')(app);
+    require(process.cwd() + '/app/routes/user.server.route')(app);
 
-    app.use(express.static(__dirname + '\\../public'));
+    app.use(express.static(process.cwd() + '/public'));
     return app;
 };

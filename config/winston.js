@@ -18,7 +18,7 @@ module.exports = function () {
             new (require('winston-daily-rotate-file'))({
                 level: 'info',
                 json: false,
-                filename: __dirname + '\\../logs\\' + '\\.log', // file path
+                filename: process.cwd() + '/logs\\' + '\\.log', // file path
                 timestamp: function () {
                     return getTime('Y-m-d H:i:s');
                 },

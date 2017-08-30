@@ -1,7 +1,7 @@
-var logger = require(__dirname + '\\../../config/winston'),
-    pool = require(__dirname + '\\../../config/maria.pool'),
+var logger = require(process.cwd() + '/config/winston'),
+    pool = require(process.cwd() + '/config/maria.pool'),
     jwt = require('jsonwebtoken'),
-    tokenCheck = require(__dirname + '\\token.server.controller');
+    tokenCheck = require(process.cwd() + '/app/controllers/token.server.controller');
 
 exports.details_of_participation = function (req, res) {
     var isValidatedToken = tokenCheck.check(req),

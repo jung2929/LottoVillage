@@ -1,5 +1,5 @@
-var logger = require(__dirname + '\\../../config/winston'),
-    pool = require(__dirname + '\\../../config/maria.pool'),
+var logger = require(process.cwd() + '/config/winston'),
+    pool = require(process.cwd() + '/config/maria.pool'),
     request = require('request'),
     cheerio = require('cheerio'),
     iconv = require('iconv-lite');
