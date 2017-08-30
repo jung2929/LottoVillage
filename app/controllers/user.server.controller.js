@@ -48,11 +48,13 @@ exports.login = function (req, res) {
             [requestPhoneNumber, requestPassword],
             function (error, results, columns) {
                 if (error) {
+                    connection.release();
                     logger().info('로그인 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
                     return res.json({isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage});
                 }
 
                 if (!results.length) {
+                    connection.release();
                     return res.json({isSuccess: false, errorMessage: "전화번호 혹은 비밀번호가 일치하지 않습니다."});
                 }
 

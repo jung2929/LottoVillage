@@ -23,14 +23,9 @@ schedule.scheduleJob('0 */12 * * *', function () {
     scheduleController.everyTwelveHour();
 });
 
-/*schedule.scheduleJob('0 0 * * 7', function () {
+schedule.scheduleJob('0 0 * * 4', function () {
     scheduleController.everySunday();
-});*/
-
-for (var i = 700; i < 769; i++) {
-    scheduleController.everySunday(i);
-}
-//scheduleController.everySunday(315);
+});
 
 var app = express();
 app.listen(3000);

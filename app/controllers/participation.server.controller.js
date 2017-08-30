@@ -126,11 +126,13 @@ exports.participation = function (req, res) {
                 requestPhoneNumber],
             function (error, results, columns) {
                 if (error) {
+                    connection.release();
                     logger().info('참여내역조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
                     return res.json({isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage});
                 }
 
                 if (results[0].COUNT > 0) {
+                    connection.release();
                     return res.json({isSuccess: false, errorMessage: "이미 참가한 내역이 존재합니다."});
                 }
 
