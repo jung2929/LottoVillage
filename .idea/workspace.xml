@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d4c7ade0-248a-428c-a3be-555f34076ca7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/participation.server.controller.js" afterPath="$PROJECT_DIR$/app/controllers/participation.server.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/schedule.server.controller.js" afterPath="$PROJECT_DIR$/app/controllers/schedule.server.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/user.server.controller.js" afterPath="$PROJECT_DIR$/app/controllers/user.server.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/index.server.route.js" afterPath="$PROJECT_DIR$/app/routes/index.server.route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/participation.server.route.js" afterPath="$PROJECT_DIR$/app/routes/participation.server.route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/user.server.route.js" afterPath="$PROJECT_DIR$/app/routes/user.server.route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/express.js" afterPath="$PROJECT_DIR$/config/express.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/winston.js" afterPath="$PROJECT_DIR$/config/winston.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,18 +22,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="winston.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/winston.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+            <state relative-caret-position="437">
+              <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -48,8 +32,8 @@
       <file leaf-file-name="express.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/express.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,8 +42,30 @@
       <file leaf-file-name="schedule.server.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/schedule.server.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="55" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="55" />
+            <state relative-caret-position="228">
+              <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+              <folding>
+                <element signature="e#1717#6283#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="maria.pool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/maria.pool.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="winston.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/winston.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -68,9 +74,35 @@
       <file leaf-file-name="user.server.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/user.server.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2360">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="75">
+              <caret line="53" column="17" lean-forward="false" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+              <folding>
+                <marker date="1504068297404" expanded="true" signature="273:3969" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="425:676" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="682:964" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="741:857" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="863:958" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="1523:1602" ph="{&quot;errorMessage&quot;: &quot;비밀번호는 6~10자리를 입력해주세요.&quot;...}" />
+                <marker date="1504068297404" expanded="true" signature="1656:3965" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="1683:1905" ph="{&quot;sql&quot;: 'SELECT PK_ID, PHONE_NUMBER, PASSWORD \&#10;                  FROM USER_INFO \&#10;                  WHERE PHONE_NUMBER = ? \&#10;                  AND PASSWORD = ?'...}" />
+                <marker date="1504068297404" expanded="true" signature="2005:3957" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="2034:2299" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="2338:2498" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="2582:2769" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="2837:2945" ph="{&quot;expiresIn&quot;: '7d'...}" />
+                <marker date="1504068297404" expanded="true" signature="2999:3269" ph="{&quot;sql&quot;: 'UPDATE USER_INFO \&#10;                        SET CURRENT_DATETIME = CURRENT_TIMESTAMP \&#10;                        WHERE PHONE_NUMBER = ? \&#10;                        AND PASSWORD = ?'...}" />
+                <marker date="1504068297404" expanded="true" signature="3385:3941" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="3469:3714" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="4011:6449" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="4924:5001" ph="{&quot;errorMessage&quot;: &quot;이름은 3~10자리를 입력해주세요.&quot;...}" />
+                <marker date="1504068297404" expanded="true" signature="5087:5166" ph="{&quot;errorMessage&quot;: &quot;비밀번호는 6~10자리를 입력해주세요.&quot;...}" />
+                <marker date="1504068297404" expanded="true" signature="5266:5348" ph="{&quot;errorMessage&quot;: &quot;비밀번호확인값은 6~10자리를 입력해주세요.&quot;...}" />
+                <marker date="1504068297404" expanded="true" signature="5420:5494" ph="{&quot;errorMessage&quot;: &quot;비밀번호가 일치하지 않습니다.&quot;...}" />
+                <marker date="1504068297404" expanded="true" signature="5701:6445" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="5728:5886" ph="{&quot;sql&quot;: 'INSERT INTO USER_INFO(PHONE_NUMBER, PASSWORD, NAME) \&#10;                  VALUES(?, ?, ?)'...}" />
+                <marker date="1504068297404" expanded="true" signature="5999:6437" ph="{...}" />
+                <marker date="1504068297404" expanded="true" signature="6067:6289" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,39 +110,39 @@
       <file leaf-file-name="participation.server.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/participation.server.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="58" lean-forward="false" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.server.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes/user.server.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.server.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes/index.server.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="participation.server.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes/participation.server.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="49" lean-forward="false" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
-              <folding />
+            <state relative-caret-position="1672">
+              <caret line="136" column="17" lean-forward="false" selection-start-line="114" selection-start-column="4" selection-end-line="136" selection-end-column="17" />
+              <folding>
+                <marker date="1504068297288" expanded="true" signature="292:2778" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="399:552" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="558:640" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="1562:2774" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="1589:2043" ph="{&quot;sql&quot;: 'SELECT WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \&#10;                WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, PARTICIPATING_TIME \&#10;                FROM PARTICIPATION \&#10;                WHERE EVENT_TYPE = ? \&#10;                AND EVENT_DATE = ? \&#10;                AND EVENT_NUMBER = ? \&#10;                AND PHONE_NUMBER = ? \&#10;                AND CONFIRM_STATUS = ?'...}" />
+                <marker date="1504068297288" expanded="true" signature="2057:2171" ph="[...]" />
+                <marker date="1504068297288" expanded="true" signature="2220:2766" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="2288:2514" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="2553:2663" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="2825:7967" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="2932:3085" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="3091:3173" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="4898:5092" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="4991:5086" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="5128:5365" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="5264:5359" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="5401:5576" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="5475:5570" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="5582:5669" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="5721:7963" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="5748:6034" ph="{&quot;sql&quot;: 'SELECT COUNT(1) AS COUNT \&#10;                FROM PARTICIPATION \&#10;                WHERE EVENT_TYPE = ? \&#10;                AND EVENT_DATE = ? \&#10;                AND EVENT_NUMBER = ? \&#10;                AND PHONE_NUMBER = ?'...}" />
+                <marker date="1504068297288" expanded="true" signature="6048:6140" ph="[...]" />
+                <marker date="1504068297288" expanded="true" signature="6189:7955" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="6218:6486" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="6530:6683" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="6718:7167" ph="{&quot;sql&quot;: 'INSERT INTO PARTICIPATION (EVENT_TYPE, EVENT_DATE, EVENT_NUMBER, PHONE_NUMBER, \&#10;                        WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \&#10;                        WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6) \&#10;                        VALUES (?, ?, ?, ?, \&#10;                        ?, ?, ?, \&#10;                        ?, ?, ?)'...}" />
+                <marker date="1504068297288" expanded="true" signature="7189:7451" ph="[...]" />
+                <marker date="1504068297288" expanded="true" signature="7508:7939" ph="{...}" />
+                <marker date="1504068297288" expanded="true" signature="7592:7838" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,7 +198,6 @@
         <option value="$PROJECT_DIR$/app/routes/schedule.server.route.js" />
         <option value="$PROJECT_DIR$/config/maria.pool.js" />
         <option value="$PROJECT_DIR$/config/express.js" />
-        <option value="$PROJECT_DIR$/app/controllers/schedule.server.controller.js" />
         <option value="$PROJECT_DIR$/app/controllers/user.server.controller.js" />
         <option value="$PROJECT_DIR$/app/controllers/participation.server.controller.js" />
         <option value="$PROJECT_DIR$/app/routes/user.server.route.js" />
@@ -174,6 +205,7 @@
         <option value="$PROJECT_DIR$/app/routes/participation.server.route.js" />
         <option value="$PROJECT_DIR$/config/winston.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/app/controllers/schedule.server.controller.js" />
       </list>
     </option>
   </component>
@@ -199,7 +231,7 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1996" />
+    <option name="x" value="1783" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -227,35 +259,35 @@
         <subPane>
           <expand>
             <path>
-              <item name="LottoVillageServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LottoVillageServer" type="462c0819:PsiDirectoryNode" />
+              <item name="LottoVillage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LottoVillage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="LottoVillageServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LottoVillageServer" type="462c0819:PsiDirectoryNode" />
+              <item name="LottoVillage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LottoVillage" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="LottoVillageServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LottoVillageServer" type="462c0819:PsiDirectoryNode" />
+              <item name="LottoVillage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LottoVillage" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="LottoVillageServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LottoVillageServer" type="462c0819:PsiDirectoryNode" />
+              <item name="LottoVillage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LottoVillage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LottoVillage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LottoVillage" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="LottoVillageServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LottoVillageServer" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LottoVillageServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LottoVillageServer" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="LottoVillage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LottoVillage" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -361,7 +393,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142067000" />
+    <option name="totallyTimeSpent" value="143378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -370,20 +402,30 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2078125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32590234" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40233546" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32590234" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2078125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40233546" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,24 +653,80 @@
     <entry file="file://$PROJECT_DIR$/config/maria.pool.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="19" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/user.server.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2360">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="75">
+          <caret line="53" column="17" lean-forward="false" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+          <folding>
+            <marker date="1504068297404" expanded="true" signature="273:3969" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="425:676" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="682:964" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="741:857" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="863:958" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="1523:1602" ph="{&quot;errorMessage&quot;: &quot;비밀번호는 6~10자리를 입력해주세요.&quot;...}" />
+            <marker date="1504068297404" expanded="true" signature="1656:3965" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="1683:1905" ph="{&quot;sql&quot;: 'SELECT PK_ID, PHONE_NUMBER, PASSWORD \&#10;                  FROM USER_INFO \&#10;                  WHERE PHONE_NUMBER = ? \&#10;                  AND PASSWORD = ?'...}" />
+            <marker date="1504068297404" expanded="true" signature="2005:3957" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="2034:2299" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="2338:2498" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="2582:2769" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="2837:2945" ph="{&quot;expiresIn&quot;: '7d'...}" />
+            <marker date="1504068297404" expanded="true" signature="2999:3269" ph="{&quot;sql&quot;: 'UPDATE USER_INFO \&#10;                        SET CURRENT_DATETIME = CURRENT_TIMESTAMP \&#10;                        WHERE PHONE_NUMBER = ? \&#10;                        AND PASSWORD = ?'...}" />
+            <marker date="1504068297404" expanded="true" signature="3385:3941" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="3469:3714" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="4011:6449" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="4924:5001" ph="{&quot;errorMessage&quot;: &quot;이름은 3~10자리를 입력해주세요.&quot;...}" />
+            <marker date="1504068297404" expanded="true" signature="5087:5166" ph="{&quot;errorMessage&quot;: &quot;비밀번호는 6~10자리를 입력해주세요.&quot;...}" />
+            <marker date="1504068297404" expanded="true" signature="5266:5348" ph="{&quot;errorMessage&quot;: &quot;비밀번호확인값은 6~10자리를 입력해주세요.&quot;...}" />
+            <marker date="1504068297404" expanded="true" signature="5420:5494" ph="{&quot;errorMessage&quot;: &quot;비밀번호가 일치하지 않습니다.&quot;...}" />
+            <marker date="1504068297404" expanded="true" signature="5701:6445" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="5728:5886" ph="{&quot;sql&quot;: 'INSERT INTO USER_INFO(PHONE_NUMBER, PASSWORD, NAME) \&#10;                  VALUES(?, ?, ?)'...}" />
+            <marker date="1504068297404" expanded="true" signature="5999:6437" ph="{...}" />
+            <marker date="1504068297404" expanded="true" signature="6067:6289" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/participation.server.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="58" lean-forward="false" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="1672">
+          <caret line="136" column="17" lean-forward="false" selection-start-line="114" selection-start-column="4" selection-end-line="136" selection-end-column="17" />
+          <folding>
+            <marker date="1504068297288" expanded="true" signature="292:2778" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="399:552" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="558:640" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="1562:2774" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="1589:2043" ph="{&quot;sql&quot;: 'SELECT WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \&#10;                WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, PARTICIPATING_TIME \&#10;                FROM PARTICIPATION \&#10;                WHERE EVENT_TYPE = ? \&#10;                AND EVENT_DATE = ? \&#10;                AND EVENT_NUMBER = ? \&#10;                AND PHONE_NUMBER = ? \&#10;                AND CONFIRM_STATUS = ?'...}" />
+            <marker date="1504068297288" expanded="true" signature="2057:2171" ph="[...]" />
+            <marker date="1504068297288" expanded="true" signature="2220:2766" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="2288:2514" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="2553:2663" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="2825:7967" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="2932:3085" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="3091:3173" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="4898:5092" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="4991:5086" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="5128:5365" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="5264:5359" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="5401:5576" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="5475:5570" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="5582:5669" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="5721:7963" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="5748:6034" ph="{&quot;sql&quot;: 'SELECT COUNT(1) AS COUNT \&#10;                FROM PARTICIPATION \&#10;                WHERE EVENT_TYPE = ? \&#10;                AND EVENT_DATE = ? \&#10;                AND EVENT_NUMBER = ? \&#10;                AND PHONE_NUMBER = ?'...}" />
+            <marker date="1504068297288" expanded="true" signature="6048:6140" ph="[...]" />
+            <marker date="1504068297288" expanded="true" signature="6189:7955" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="6218:6486" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="6530:6683" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="6718:7167" ph="{&quot;sql&quot;: 'INSERT INTO PARTICIPATION (EVENT_TYPE, EVENT_DATE, EVENT_NUMBER, PHONE_NUMBER, \&#10;                        WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \&#10;                        WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6) \&#10;                        VALUES (?, ?, ?, ?, \&#10;                        ?, ?, ?, \&#10;                        ?, ?, ?)'...}" />
+            <marker date="1504068297288" expanded="true" signature="7189:7451" ph="[...]" />
+            <marker date="1504068297288" expanded="true" signature="7508:7939" ph="{...}" />
+            <marker date="1504068297288" expanded="true" signature="7592:7838" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -636,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,7 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,38 +748,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="49" lean-forward="false" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/winston.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+        <state relative-caret-position="57">
+          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/express.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/schedule.server.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="55" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="55" />
-          <folding />
+        <state relative-caret-position="228">
+          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding>
+            <element signature="e#1717#6283#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        <state relative-caret-position="437">
+          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
           <folding />
         </state>
       </provider>

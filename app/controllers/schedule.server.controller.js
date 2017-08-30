@@ -2,11 +2,11 @@ var logger = require(process.cwd() + '/config/winston'),
     pool = require(process.cwd() + '/config/maria.pool'),
     request = require('request'),
     cheerio = require('cheerio'),
-    iconv = require('iconv-lite');
+    iconv = require('iconv-lite'),
+    randomIntArray = require('random-int-array'),
+    lottoVillageWinnerNumbers = randomIntArray({count : 7, max: 45, unique: true});
 
 exports.drawLottery = function (eventType, eventDate, eventNumber) {
-    logger().info('매시간 마다 울리는 스케쥴러 작동');
-
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: 'INSERT INTO WINNING_INFO(EVENT_TYPE, EVENT_DATE, EVENT_NUMBER,\
@@ -22,9 +22,9 @@ exports.drawLottery = function (eventType, eventDate, eventNumber) {
                 timeout: 10000
             },
             [eventType, eventDate, eventNumber,
-                9, 30, 34,
-                35, 39, 41,
-                21, 500, 400,
+                lottoVillageWinnerNumbers[0], lottoVillageWinnerNumbers[1], lottoVillageWinnerNumbers[2],
+                lottoVillageWinnerNumbers[3], lottoVillageWinnerNumbers[4], lottoVillageWinnerNumbers[5],
+                lottoVillageWinnerNumbers[6], 500, 400,
                 300, 200, 100],
             function (error, results, columns) {
                 connection.release();
@@ -38,16 +38,7 @@ exports.drawLottery = function (eventType, eventDate, eventNumber) {
     });
 };
 
-exports.everySixHour = function () {
-    logger().info('6시간 마다 울리는 스케쥴러 작동');
-};
-
-exports.everyTwelveHour = function () {
-    logger().info('12시간 마다 울리는 스케쥴러 작동');
-};
-
 exports.everySunday = function () {
-    logger().info('일요일 밤12시 마다 울리는 스케쥴러 작동');
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: 'SELECT PK_ID \
@@ -68,7 +59,7 @@ exports.everySunday = function () {
                     return logger().info('자동 로또당첨번호 회차 불러오기 - 불러온 회차 : ' + results[0].PK_ID);
                 }
 
-                var number = results[0].PK_ID;
+                var number = results[0].PK_ID + 1;
 
                 var requestOptions = {
                     method: 'GET',
