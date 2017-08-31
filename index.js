@@ -2,9 +2,7 @@ var express = require(process.cwd() + '/config/express'),
     schedule = require('node-schedule'),
     scheduleController = require(process.cwd() + '/app/controllers/schedule.server.controller'),
     logger = require(process.cwd() + '/config/winston'),
-    dateFormat = require('dateformat'),
-    eventDate = dateFormat(new Date(), 'yymmdd'),
-    eventNumber = dateFormat(new Date(), 'HH');
+    dateFormat = require('dateformat');
 
 // *     *     *     *     *     *
 // ┬    ┬    ┬    ┬    ┬    ┬
@@ -17,17 +15,17 @@ var express = require(process.cwd() + '/config/express'),
 // └───────────────────────── second (0 - 59, OPTIONAL)
 schedule.scheduleJob('0 * * * *', function () {
     logger().info('매시간 마다 울리는 스케쥴러 작동');
-    scheduleController.drawLottery('1', eventDate, eventNumber);
+    scheduleController.drawLottery('1', dateFormat(new Date(), 'yymmdd'), dateFormat(new Date(), 'HH'));
 });
 
 schedule.scheduleJob('0 */6 * * *', function () {
     logger().info('6시간 마다 울리는 스케쥴러 작동');
-    scheduleController.drawLottery('2', eventDate, eventNumber);
+    scheduleController.drawLottery('2', dateFormat(new Date(), 'yymmdd'), dateFormat(new Date(), 'HH'));
 });
 
 schedule.scheduleJob('0 */12 * * *', function () {
     logger().info('12시간 마다 울리는 스케쥴러 작동');
-    scheduleController.drawLottery('3', eventDate, eventNumber);
+    scheduleController.drawLottery('3', dateFormat(new Date(), 'yymmdd'), dateFormat(new Date(), 'HH'));
 });
 
 schedule.scheduleJob('0 0 * * 4', function () {
