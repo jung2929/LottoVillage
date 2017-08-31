@@ -3,10 +3,10 @@ var logger = require(process.cwd() + '/config/winston'),
     request = require('request'),
     cheerio = require('cheerio'),
     iconv = require('iconv-lite'),
-    randomIntArray = require('random-int-array'),
-    lottoVillageWinnerNumbers = randomIntArray({count : 7, max: 45, unique: true});
+    randomIntArray = require('random-int-array');
 
 exports.drawLottery = function (eventType, eventDate, eventNumber) {
+    var lottoVillageWinnerNumbers = randomIntArray({count : 7, max: 45, unique: true});
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: 'INSERT INTO WINNING_INFO(EVENT_TYPE, EVENT_DATE, EVENT_NUMBER,\
