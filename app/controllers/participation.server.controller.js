@@ -156,6 +156,7 @@ exports.participation = function (req, res) {
         case '1':
             requestEventNumber++;
             if (requestEventNumber === 24) {
+                requestEventDate = dateFormat(new Date().getDate() + 1, 'yymmdd');
                 requestEventNumber = '00';
             }
             break;
@@ -171,6 +172,7 @@ exports.participation = function (req, res) {
                     requestEventNumber = '18';
                     break;
                 case (requestEventNumber >= 18 && requestEventNumber <= 23):
+                    requestEventDate = dateFormat(new Date().getDate() + 1, 'yymmdd');
                     requestEventNumber = '00';
                     break;
             }
@@ -181,6 +183,7 @@ exports.participation = function (req, res) {
                     requestEventNumber = '12';
                     break;
                 case (requestEventNumber >= 12 && requestEventNumber <= 23):
+                    requestEventDate = dateFormat(new Date().getDate() + 1, 'yymmdd');
                     requestEventNumber = '00';
                     break;
             }

@@ -32,10 +32,10 @@ exports.drawLottery = function (eventType, eventDate, eventNumber) {
                 connection.release();
 
                 if (error) {
-                    return logger().info('매 1시간 자동 추첨 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                    return logger().info(eventType + ' 타입 자동 추첨 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
                 }
 
-                logger().info('매 1시간 자동 추첨 완료');
+                logger().info(eventType + ' 타입 자동 추첨 완료');
             });
     });
 };
