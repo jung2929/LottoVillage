@@ -1,7 +1,41 @@
 var logger = require(process.cwd() + '/config/winston'),
     pool = require(process.cwd() + '/config/maria.pool'),
     jwt = require('jsonwebtoken'),
-    tokenCheck = require(process.cwd() + '/app/controllers/token.server.controller');
+    tokenCheck = require(process.cwd() + '/app/controllers/token.server.controller'),
+    randomIntArray = require('random-int-array'),
+    dateFormat = require('dateformat');
+
+exports.details_of_lotto = function (req, res) {
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: 'SELECT WINNING_DATE, WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \
+                WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, BONUS_NUMBER, \
+                TOTAL_PRIZE_1, TOTAL_NUMBER_1, PER_PRIZE_1, \
+                TOTAL_PRIZE_2, TOTAL_NUMBER_2, PER_PRIZE_2, \
+                TOTAL_PRIZE_3, TOTAL_NUMBER_3, PER_PRIZE_3, \
+                TOTAL_PRIZE_4, TOTAL_NUMBER_4, PER_PRIZE_4, \
+                TOTAL_PRIZE_5, TOTAL_NUMBER_5, PER_PRIZE_5 \
+                FROM LOTTO_INFO \
+                WHERE PK_ID = ?',
+                timeout: 10000
+            },
+            [req.query.rounds],
+            function (error, results, columns) {
+                connection.release();
+
+                if (error) {
+                    logger().info('로또당첨번호 조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                    return res.json({isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage});
+                }
+
+                if (!results.length) {
+                    return res.json({isSuccess: false, errorMessage: "로또당첨번호가 존재하지 않습니다."});
+                }
+
+                return res.json({isSuccess: true, errorMessage: "", results: results});
+            });
+    });
+};
 
 exports.details_of_participation = function (req, res) {
     var isValidatedToken = tokenCheck.check(req),
@@ -14,20 +48,61 @@ exports.details_of_participation = function (req, res) {
         return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
     }
 
-    var requestEventType = req.body.event_type,
-        requestEventDate = req.body.event_date,
-        requestEventNumber = req.body.event_number,
-        requestConfirmStatus = req.body.confirm_status;
+    var requestEventType = req.query.event_type,
+        requestEventDate = req.query.event_date,
+        requestEventNumber = req.query.event_number,
+        requestConfirmStatus = req.query.confirm_status;
 
     if (!requestEventType) return res.json({isSuccess: false, errorMessage: "조회하려는 타입을 골라주세요."});
-    if (!requestEventDate) return res.json({isSuccess: false, errorMessage: "조회하려는 날짜를 입력해주세요."});
-    if (!requestEventNumber) return res.json({isSuccess: false, errorMessage: "조회하려는 회차를 입력해주세요."});
-    if (!requestConfirmStatus) return res.json({isSuccess: false, errorMessage: "조회하려는 추첨여부를 입력해주세요."});
+    if (requestConfirmStatus === undefined) return res.json({isSuccess: false, errorMessage: "조회하려는 추첨여부를 입력해주세요."});
 
     requestEventType = requestEventType.replace(/(\s*)/g, "");
-    requestEventDate = requestEventDate.replace(/(\s*)/g, "");
-    requestEventNumber = requestEventNumber.replace(/(\s*)/g, "");
     requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
+
+    if (requestConfirmStatus === 'false') {
+        requestEventDate = dateFormat(new Date(), 'yymmdd');
+        requestEventNumber = dateFormat(new Date(), 'HH');
+    }
+
+    switch (requestEventType) {
+        case '1':
+            requestEventNumber++;
+            if (requestEventNumber === 24) {
+                requestEventNumber = '00';
+            }
+            break;
+        case '2':
+            switch (true) {
+                case (requestEventNumber >= 0 && requestEventNumber < 6):
+                    requestEventNumber = '06';
+                    break;
+                case (requestEventNumber >= 6 && requestEventNumber < 12):
+                    requestEventNumber = '12';
+                    break;
+                case (requestEventNumber >= 12 && requestEventNumber < 18):
+                    requestEventNumber = '18';
+                    break;
+                case (requestEventNumber >= 18 && requestEventNumber <= 23):
+                    requestEventNumber = '00';
+                    break;
+            }
+            break;
+        case '3':
+            switch (true) {
+                case (requestEventNumber >= 0 && requestEventNumber < 12):
+                    requestEventNumber = '12';
+                    break;
+                case (requestEventNumber >= 12 && requestEventNumber <= 23):
+                    requestEventNumber = '00';
+                    break;
+            }
+            break;
+        default:
+            return res.json({isSuccess: false, errorMessage: "로또 타입 값이 잘못되었습니다."});
+    }
+
+    console.log(requestEventType, requestEventDate, requestEventNumber,
+        requestPhoneNumber, requestConfirmStatus);
 
     pool.getConnection(function (err, connection) {
         connection.query({
@@ -72,44 +147,49 @@ exports.participation = function (req, res) {
     }
 
     var requestEventType = req.body.event_type,
-        requestEventDate = req.body.event_date,
-        requestEventNumber = req.body.event_number,
-        requestWinningNumber1 = req.body.winning_number_1,
-        requestWinningNumber2 = req.body.winning_number_2,
-        requestWinningNumber3 = req.body.winning_number_3,
-        requestWinningNumber4 = req.body.winning_number_4,
-        requestWinningNumber5 = req.body.winning_number_5,
-        requestWinningNumber6 = req.body.winning_number_6;
+        requestEventDate = dateFormat(new Date(), 'yymmdd'),
+        requestEventNumber = dateFormat(new Date(), 'HH');
 
     if (!requestEventType) return res.json({isSuccess: false, errorMessage: "조회하려는 타입을 골라주세요."});
-    if (!requestEventDate) return res.json({isSuccess: false, errorMessage: "조회하려는 날짜를 입력해주세요."});
-    if (!requestEventNumber) return res.json({isSuccess: false, errorMessage: "조회하려는 회차를 입력해주세요."});
-    if (!requestWinningNumber1) return res.json({isSuccess: false, errorMessage: "첫번째 추첨번호를 입력해주세요."});
-    if (!requestWinningNumber2) return res.json({isSuccess: false, errorMessage: "두번째 추첨번호를 입력해주세요."});
-    if (!requestWinningNumber3) return res.json({isSuccess: false, errorMessage: "세번째 추첨번호를 입력해주세요."});
-    if (!requestWinningNumber4) return res.json({isSuccess: false, errorMessage: "네번째 추첨번호를 입력해주세요."});
-    if (!requestWinningNumber5) return res.json({isSuccess: false, errorMessage: "다섯번째 추첨번호를 입력해주세요."});
-    if (!requestWinningNumber6) return res.json({isSuccess: false, errorMessage: "여섯번째 추첨번호를 입력해주세요."});
 
     requestEventType = requestEventType.replace(/(\s*)/g, "");
-    requestEventDate = requestEventDate.replace(/(\s*)/g, "");
-    requestEventNumber = requestEventNumber.replace(/(\s*)/g, "");
     requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
 
-    if (requestEventType === '1') {
-        if (parseInt(requestEventNumber, 10) < 0 || parseInt(requestEventNumber, 10) > 23) {
-            return res.json({isSuccess: false, errorMessage: "로또 회차 값이 잘못되었습니다."});
-        }
-    } else if (requestEventType === '2') {
-        if (requestEventNumber !== '00' && requestEventNumber !== '06' && requestEventNumber !== '12' && requestEventNumber !== '18') {
-            return res.json({isSuccess: false, errorMessage: "로또 회차 값이 잘못되었습니다."});
-        }
-    } else if (requestEventType === '3') {
-        if (requestEventNumber !== '00' && requestEventNumber !== '12') {
-            return res.json({isSuccess: false, errorMessage: "로또 회차 값이 잘못되었습니다."});
-        }
-    } else {
-        return res.json({isSuccess: false, errorMessage: "로또 타입 값이 잘못되었습니다."});
+    switch (requestEventType) {
+        case '1':
+            requestEventNumber++;
+            if (requestEventNumber === 24) {
+                requestEventNumber = '00';
+            }
+            break;
+        case '2':
+            switch (true) {
+                case (requestEventNumber >= 0 && requestEventNumber < 6):
+                    requestEventNumber = '06';
+                    break;
+                case (requestEventNumber >= 6 && requestEventNumber < 12):
+                    requestEventNumber = '12';
+                    break;
+                case (requestEventNumber >= 12 && requestEventNumber < 18):
+                    requestEventNumber = '18';
+                    break;
+                case (requestEventNumber >= 18 && requestEventNumber <= 23):
+                    requestEventNumber = '00';
+                    break;
+            }
+            break;
+        case '3':
+            switch (true) {
+                case (requestEventNumber >= 0 && requestEventNumber < 12):
+                    requestEventNumber = '12';
+                    break;
+                case (requestEventNumber >= 12 && requestEventNumber <= 23):
+                    requestEventNumber = '00';
+                    break;
+            }
+            break;
+        default:
+            return res.json({isSuccess: false, errorMessage: "로또 타입 값이 잘못되었습니다."});
     }
 
     pool.getConnection(function (err, connection) {
@@ -135,6 +215,14 @@ exports.participation = function (req, res) {
                     connection.release();
                     return res.json({isSuccess: false, errorMessage: "이미 참가한 내역이 존재합니다."});
                 }
+
+                var lottoVillageWinnerNumbers = randomIntArray({count : 7, min: 1, max: 45, unique: true}),
+                    requestWinningNumber1 = lottoVillageWinnerNumbers[0],
+                    requestWinningNumber2 = lottoVillageWinnerNumbers[1],
+                    requestWinningNumber3 = lottoVillageWinnerNumbers[2],
+                    requestWinningNumber4 = lottoVillageWinnerNumbers[3],
+                    requestWinningNumber5 = lottoVillageWinnerNumbers[4],
+                    requestWinningNumber6 = lottoVillageWinnerNumbers[5];
 
                 connection.query({
                         sql: 'INSERT INTO PARTICIPATION (EVENT_TYPE, EVENT_DATE, EVENT_NUMBER, PHONE_NUMBER, \
