@@ -1,6 +1,9 @@
 # Database Config
 config/maria.pool.js
 
+# IDE Config
+.idea/workspace.xml
+
 # Logs
 logs
 *.log
