@@ -101,9 +101,6 @@ exports.details_of_participation = function (req, res) {
             return res.json({isSuccess: false, errorMessage: "로또 타입 값이 잘못되었습니다."});
     }
 
-    console.log(requestEventType, requestEventDate, requestEventNumber,
-        requestPhoneNumber, requestConfirmStatus);
-
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: 'SELECT WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \
@@ -216,8 +213,11 @@ exports.participation = function (req, res) {
                     return res.json({isSuccess: false, errorMessage: "이미 참가한 내역이 존재합니다."});
                 }
 
-                var lottoVillageWinnerNumbers = randomIntArray({count : 7, min: 1, max: 45, unique: true}),
-                    requestWinningNumber1 = lottoVillageWinnerNumbers[0],
+                var lottoVillageWinnerNumbers = randomIntArray({count : 7, min: 1, max: 45, unique: true});
+                lottoVillageWinnerNumbers.sort(function (a, b) {
+                    return a - b;
+                });
+                var requestWinningNumber1 = lottoVillageWinnerNumbers[0],
                     requestWinningNumber2 = lottoVillageWinnerNumbers[1],
                     requestWinningNumber3 = lottoVillageWinnerNumbers[2],
                     requestWinningNumber4 = lottoVillageWinnerNumbers[3],

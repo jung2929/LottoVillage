@@ -6,7 +6,9 @@ var logger = require(process.cwd() + '/config/winston'),
     randomIntArray = require('random-int-array');
 
 exports.drawLottery = function (eventType, eventDate, eventNumber) {
-    var lottoVillageWinnerNumbers = randomIntArray({count : 7, min: 1, max: 45, unique: true});
+    var lottoVillageWinnerNumbers = randomIntArray({count : 7, min: 1, max: 45, unique: true}).sort(function (a, b) {
+        return a - b;
+    });
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: 'INSERT INTO WINNING_INFO(EVENT_TYPE, EVENT_DATE, EVENT_NUMBER,\

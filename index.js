@@ -28,7 +28,7 @@ schedule.scheduleJob('0 */12 * * *', function () {
     scheduleController.drawLottery('3', dateFormat(new Date(), 'yymmdd'), dateFormat(new Date(), 'HH'));
 });
 
-schedule.scheduleJob('0 0 * * 0ß', function () {
+schedule.scheduleJob('0 0 * * 0', function () {
     logger().info('일요일 밤12시 마다 울리는 스케쥴러 작동');
     scheduleController.everySunday();
 });
