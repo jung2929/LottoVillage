@@ -60,14 +60,18 @@ exports.details_of_participation = function (req, res) {
     requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
 
     if (requestConfirmStatus === 'false') {
-        requestEventDate = dateFormat(new Date(), 'yymmdd');
-        requestEventNumber = dateFormat(new Date(), 'HH');
+        var eventDate = new Date();
+        requestEventDate = dateFormat(eventDate, 'yymmdd');
+        requestEventNumber = dateFormat(eventDate, 'HH');
     }
 
     switch (requestEventType) {
         case '1':
             requestEventNumber++;
+            requestEventNumber = requestEventNumber < 10 ? '0' + requestEventNumber : requestEventNumber;
             if (requestEventNumber === 24) {
+                eventDate.setDate(eventDate.getDate() + 1);
+                requestEventDate = dateFormat(eventDate, 'yymmdd');
                 requestEventNumber = '00';
             }
             break;
@@ -83,6 +87,8 @@ exports.details_of_participation = function (req, res) {
                     requestEventNumber = '18';
                     break;
                 case (requestEventNumber >= 18 && requestEventNumber <= 23):
+                    eventDate.setDate(eventDate.getDate() + 1);
+                    requestEventDate = dateFormat(eventDate, 'yymmdd');
                     requestEventNumber = '00';
                     break;
             }
@@ -93,6 +99,8 @@ exports.details_of_participation = function (req, res) {
                     requestEventNumber = '12';
                     break;
                 case (requestEventNumber >= 12 && requestEventNumber <= 23):
+                    eventDate.setDate(eventDate.getDate() + 1);
+                    requestEventDate = dateFormat(eventDate, 'yymmdd');
                     requestEventNumber = '00';
                     break;
             }
@@ -144,8 +152,9 @@ exports.participation = function (req, res) {
     }
 
     var requestEventType = req.body.event_type,
-        requestEventDate = dateFormat(new Date(), 'yymmdd'),
-        requestEventNumber = dateFormat(new Date(), 'HH');
+        eventDate = new Date(),
+        requestEventDate = dateFormat(eventDate, 'yymmdd'),
+        requestEventNumber = dateFormat(eventDate, 'HH');
 
     if (!requestEventType) return res.json({isSuccess: false, errorMessage: "조회하려는 타입을 골라주세요."});
 
@@ -157,7 +166,8 @@ exports.participation = function (req, res) {
             requestEventNumber++;
             requestEventNumber = requestEventNumber < 10 ? '0' + requestEventNumber : requestEventNumber;
             if (requestEventNumber === 24) {
-                requestEventDate = dateFormat(new Date().getDate() + 1, 'yymmdd');
+                eventDate.setDate(eventDate.getDate() + 1);
+                requestEventDate = dateFormat(eventDate, 'yymmdd');
                 requestEventNumber = '00';
             }
             break;
@@ -173,7 +183,8 @@ exports.participation = function (req, res) {
                     requestEventNumber = '18';
                     break;
                 case (requestEventNumber >= 18 && requestEventNumber <= 23):
-                    requestEventDate = dateFormat(new Date().getDate() + 1, 'yymmdd');
+                    eventDate.setDate(eventDate.getDate() + 1);
+                    requestEventDate = dateFormat(eventDate, 'yymmdd');
                     requestEventNumber = '00';
                     break;
             }
@@ -184,7 +195,8 @@ exports.participation = function (req, res) {
                     requestEventNumber = '12';
                     break;
                 case (requestEventNumber >= 12 && requestEventNumber <= 23):
-                    requestEventDate = dateFormat(new Date().getDate() + 1, 'yymmdd');
+                    eventDate.setDate(eventDate.getDate() + 1);
+                    requestEventDate = dateFormat(eventDate, 'yymmdd');
                     requestEventNumber = '00';
                     break;
             }
