@@ -155,6 +155,7 @@ exports.participation = function (req, res) {
     switch (requestEventType) {
         case '1':
             requestEventNumber++;
+            requestEventNumber = requestEventNumber < 10 ? '0' + requestEventNumber : requestEventNumber;
             if (requestEventNumber === 24) {
                 requestEventDate = dateFormat(new Date().getDate() + 1, 'yymmdd');
                 requestEventNumber = '00';
