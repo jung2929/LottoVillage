@@ -15,12 +15,8 @@ exports.login = function (req, res) {
         requestPassword = tokenData.password;
         tokenValue = req.headers["x-access-token"];
     } else {
-        if (req.headers["x-access-token"] === undefined) {
-            requestPhoneNumber = req.body.phone_number;
-            requestPassword = req.body.password;
-        } else {
-            return res.json({isSuccess: false, errorMessage: "로그인 인증값이 잘못되었습니다."});
-        }
+        requestPhoneNumber = req.body.phone_number;
+        requestPassword = req.body.password;
     }
 
     if (!requestPhoneNumber) return res.json({isSuccess: false, errorMessage: "전화번호를 입력해주세요."});
@@ -66,7 +62,7 @@ exports.login = function (req, res) {
                     },
                     'developmentTokenSecret',
                     {
-                        expiresIn: '1d',
+                        expiresIn: '3d',
                         subject: 'userInfo'
                     }
                 );
