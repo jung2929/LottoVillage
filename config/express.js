@@ -50,6 +50,7 @@ module.exports = function () {
     app.set('view engine', 'ejs');
 
     require(process.cwd() + '/app/routes/index.server.route')(app);
+    require(process.cwd() + '/app/routes/product.server.route')(app);
     require(process.cwd() + '/app/routes/participation.server.route')(app);
     require(process.cwd() + '/app/routes/user.server.route')(app);
 

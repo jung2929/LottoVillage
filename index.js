@@ -29,7 +29,7 @@ schedule.scheduleJob('0 */12 * * *', function () {
 });
 
 schedule.scheduleJob('0 0 * * 0', function () {
-    logger().info('일요일 밤12시 마다 울리는 스케쥴러 작동');
+    logger().info('일요일 00시 마다 울리는 스케쥴러 작동');
     scheduleController.everySunday();
 });
 

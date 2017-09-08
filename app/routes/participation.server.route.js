@@ -3,6 +3,7 @@ module.exports = function(app){
     app.get('/lotto_rounds', participation.lotto_rounds);
     app.get('/details_of_lotto', participation.details_of_lotto);
     app.get('/details_of_participation', participation.details_of_participation);
+    app.get('/details_of_all_participation', participation.details_of_all_participation);
     app.route('/participation')
         .post(participation.participation);
 };

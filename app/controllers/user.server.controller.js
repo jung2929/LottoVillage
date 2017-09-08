@@ -3,6 +3,47 @@ var logger = require(process.cwd() + '/config/winston'),
     jwt = require('jsonwebtoken'),
     tokenCheck = require(process.cwd() + '/app/controllers/token.server.controller');
 
+exports.retrievePoint = function (req, res) {
+    var isValidatedToken = tokenCheck.check(req),
+        requestPhoneNumber;
+
+    if (isValidatedToken) {
+        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
+        requestPhoneNumber = tokenData.phone_number;
+    } else {
+        return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
+    }
+
+    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: 'SELECT PERSONAL_SCORE \
+                FROM USER_INFO \
+                WHERE PHONE_NUMBER = ?\
+                LIMIT 1',
+                timeout: 10000
+            },
+            [requestPhoneNumber],
+            function (error, results, columns) {
+                connection.release();
+
+                if (error) {
+                    logger().info('나의 포인트 조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                    return res.json({
+                        isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage, results: 0});
+                }
+
+                if (!results.length) {
+                    return res.json({
+                        isSuccess: false, errorMessage: "내 정보가 존재하지 않습니다.", results: 0});
+                }
+
+                return res.json({isSuccess: true, errorMessage: "", results: results[0].PERSONAL_SCORE});
+            });
+    });
+};
+
 exports.login = function (req, res) {
     var isValidatedToken = tokenCheck.check(req),
         requestPhoneNumber,
