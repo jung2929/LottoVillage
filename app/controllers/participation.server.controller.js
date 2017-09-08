@@ -226,51 +226,88 @@ exports.details_of_all_participation = function (req, res) {
 
     requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
 
-    var eventDate = new Date();
-    var requestEventDate_1 = dateFormat(eventDate, 'yymmdd'),
+    var originalEventDate = new Date(),
+        eventDate = new Date(),
+        requestEventDate_1 = dateFormat(eventDate, 'yymmdd'),
         requestEventDate_2 = dateFormat(eventDate, 'yymmdd'),
         requestEventDate_3 = dateFormat(eventDate, 'yymmdd'),
         requestEventNumber_1 = dateFormat(eventDate, 'HH'),
         requestEventNumber_2 = dateFormat(eventDate, 'HH'),
-        requestEventNumber_3 = dateFormat(eventDate, 'HH');
+        requestEventNumber_3 = dateFormat(eventDate, 'HH'),
+        requestConfirmStatus = req.query.confirm_status;
 
-    // 1시간 단위 조건 값
-    requestEventNumber_1++;
-    requestEventNumber_1 = requestEventNumber_1 < 10 ? '0' + requestEventNumber_1 : requestEventNumber_1;
-    if (requestEventNumber_1 === 24) {
-        eventDate.setDate(eventDate.getDate() + 1);
-        requestEventDate_1 = dateFormat(eventDate, 'yymmdd');
-        requestEventNumber_1 = '00';
-    }
+    if (requestConfirmStatus === undefined) return res.json({isSuccess: false, errorMessage: "조회하려는 추첨여부를 입력해주세요."});
+    if (requestConfirmStatus === 'false') {
+        requestConfirmStatus = false;
+        // 1시간 단위 조건 값
+        requestEventNumber_1++;
+        requestEventNumber_1 = requestEventNumber_1 < 10 ? '0' + requestEventNumber_1 : requestEventNumber_1;
+        if (requestEventNumber_1 === 24) {
+            eventDate.setDate(originalEventDate.getDate() + 1);
+            requestEventDate_1 = dateFormat(eventDate, 'yymmdd');
+            requestEventNumber_1 = '00';
+        }
 
-    // 6시간 단위 조건 값
-    switch (true) {
-        case (requestEventNumber_2 >= 0 && requestEventNumber_2 < 6):
-            requestEventNumber_2 = '06';
-            break;
-        case (requestEventNumber_2 >= 6 && requestEventNumber_2 < 12):
-            requestEventNumber_2 = '12';
-            break;
-        case (requestEventNumber_2 >= 12 && requestEventNumber_2 < 18):
-            requestEventNumber_2 = '18';
-            break;
-        case (requestEventNumber_2 >= 18 && requestEventNumber_2 <= 23):
-            eventDate.setDate(eventDate.getDate() + 1);
-            requestEventDate_2 = dateFormat(eventDate, 'yymmdd');
-            requestEventNumber_2 = '00';
-            break;
-    }
+        // 6시간 단위 조건 값
+        switch (true) {
+            case (requestEventNumber_2 >= 0 && requestEventNumber_2 < 6):
+                requestEventNumber_2 = '06';
+                break;
+            case (requestEventNumber_2 >= 6 && requestEventNumber_2 < 12):
+                requestEventNumber_2 = '12';
+                break;
+            case (requestEventNumber_2 >= 12 && requestEventNumber_2 < 18):
+                requestEventNumber_2 = '18';
+                break;
+            case (requestEventNumber_2 >= 18 && requestEventNumber_2 <= 23):
+                eventDate.setDate(originalEventDate.getDate() + 1);
+                requestEventDate_2 = dateFormat(eventDate, 'yymmdd');
+                requestEventNumber_2 = '00';
+                break;
+        }
 
-    // 12시간 단위 조건 값
-    switch (true) {
-        case (requestEventNumber_3 >= 0 && requestEventNumber_3 < 12):
-            requestEventNumber_3 = '12';
-            break;
-        case (requestEventNumber_3 >= 12 && requestEventNumber_3 <= 23):
-            eventDate.setDate(eventDate.getDate() + 1);
-            requestEventDate_3 = dateFormat(eventDate, 'yymmdd');
-            requestEventNumber_3 = '00';
-            break;
+        // 12시간 단위 조건 값
+        switch (true) {
+            case (requestEventNumber_3 >= 0 && requestEventNumber_3 < 12):
+                requestEventNumber_3 = '12';
+                break;
+            case (requestEventNumber_3 >= 12 && requestEventNumber_3 <= 23):
+                eventDate.setDate(originalEventDate.getDate() + 1);
+                requestEventDate_3 = dateFormat(eventDate, 'yymmdd');
+                requestEventNumber_3 = '00';
+                break;
+        }
+    } else {
+        requestConfirmStatus = true;
+        // 6시간 단위 조건 값
+        switch (true) {
+            case (requestEventNumber_2 >= 0 && requestEventNumber_2 < 6):
+                eventDate.setDate(originalEventDate.getDate() -1);
+                requestEventDate_2 = dateFormat(eventDate, 'yymmdd');
+                requestEventNumber_2 = '00';
+                break;
+            case (requestEventNumber_2 >= 6 && requestEventNumber_2 < 12):
+                requestEventNumber_2 = '06';
+                break;
+            case (requestEventNumber_2 >= 12 && requestEventNumber_2 < 18):
+                requestEventNumber_2 = '12';
+                break;
+            case (requestEventNumber_2 >= 18 && requestEventNumber_2 <= 23):
+                requestEventNumber_2 = '18';
+                break;
+        }
+
+        // 12시간 단위 조건 값
+        switch (true) {
+            case (requestEventNumber_3 >= 0 && requestEventNumber_3 < 12):
+                eventDate.setDate(originalEventDate.getDate() - 1);
+                requestEventDate_3 = dateFormat(eventDate, 'yymmdd');
+                requestEventNumber_3 = '12';
+                break;
+            case (requestEventNumber_3 >= 12 && requestEventNumber_3 <= 23):
+                requestEventNumber_3 = '00';
+                break;
+        }
     }
 
     pool.getConnection(function (err, connection) {
@@ -283,7 +320,7 @@ exports.details_of_all_participation = function (req, res) {
                 AND EVENT_DATE = ? \
                 AND EVENT_NUMBER = ? \
                 AND PHONE_NUMBER = ? \
-                AND CONFIRM_STATUS = 0 \
+                AND CONFIRM_STATUS = ? \
                 \
                 UNION ALL\
                 \
@@ -294,7 +331,7 @@ exports.details_of_all_participation = function (req, res) {
                 AND EVENT_DATE = ? \
                 AND EVENT_NUMBER = ? \
                 AND PHONE_NUMBER = ? \
-                AND CONFIRM_STATUS = 0 \
+                AND CONFIRM_STATUS = ? \
                 \
                 UNION ALL\
                 \
@@ -305,12 +342,13 @@ exports.details_of_all_participation = function (req, res) {
                 AND EVENT_DATE = ? \
                 AND EVENT_NUMBER = ? \
                 AND PHONE_NUMBER = ? \
-                AND CONFIRM_STATUS = 0',
+                AND CONFIRM_STATUS = ?',
                 timeout: 10000
             },
-            ['1', requestEventDate_1, requestEventNumber_1, requestPhoneNumber,
-                '2', requestEventDate_2, requestEventNumber_2, requestPhoneNumber,
-                '3', requestEventDate_3, requestEventNumber_3, requestPhoneNumber],
+            ['1', requestEventDate_1, requestEventNumber_1, requestPhoneNumber, requestConfirmStatus,
+                '2', requestEventDate_2, requestEventNumber_2, requestPhoneNumber, requestConfirmStatus,
+                '3', requestEventDate_3, requestEventNumber_3, requestPhoneNumber, requestConfirmStatus
+            ],
             function (error, results, columns) {
                 connection.release();
 
