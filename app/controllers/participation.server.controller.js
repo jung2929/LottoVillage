@@ -86,6 +86,156 @@ exports.details_of_lotto = function (req, res) {
     });
 };
 
+exports.details_of_winning_info = function (req, res) {
+    var requestEventType = req.query.event_type,
+        requestEventDate = req.query.event_date,
+        requestEventNumber = req.query.event_number;
+
+    if (!requestEventType) return res.json({isSuccess: false, errorMessage: "조회하려는 타입을 골라주세요."});
+    if (!requestEventDate) return res.json({isSuccess: false, errorMessage: "조회하려는 날짜를 골라주세요."});
+    if (!requestEventNumber) return res.json({isSuccess: false, errorMessage: "조회하려는 시간을 골라주세요."});
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: 'SELECT EVENT_TYPE, WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \
+                WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, BONUS_NUMBER \
+                FROM WINNING_INFO \
+                WHERE EVENT_TYPE = ? \
+                AND EVENT_DATE = ? \
+                AND EVENT_NUMBER = ?',
+                timeout: 10000
+            },
+            [requestEventType, requestEventDate, requestEventNumber],
+            function (error, results, columns) {
+                connection.release();
+
+                if (error) {
+                    logger().info('당첨 번호 조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                    return res.json({
+                        isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage,
+                        results: [{
+                            EVENT_TYPE: requestEventType, WINNING_NUMBER_1: 0, WINNING_NUMBER_2: 0, WINNING_NUMBER_3: 0,
+                            WINNING_NUMBER_4: 0, WINNING_NUMBER_5: 0, WINNING_NUMBER_6: 0, BONUS_NUMBER: 0
+                        }]
+                    });
+                }
+
+                if (!results.length) {
+                    return res.json({
+                        isSuccess: false, errorMessage: "당첨 번호가 존재하지 않습니다.",
+                        results: [{
+                            EVENT_TYPE: requestEventType, WINNING_NUMBER_1: 0, WINNING_NUMBER_2: 0, WINNING_NUMBER_3: 0,
+                            WINNING_NUMBER_4: 0, WINNING_NUMBER_5: 0, WINNING_NUMBER_6: 0, BONUS_NUMBER: 0
+                        }]
+                    });
+                }
+
+                return res.json({isSuccess: true, errorMessage: "", results: results});
+            });
+    });
+};
+
+exports.details_of_all_winning_info = function (req, res) {
+    var originalEventDate = new Date(),
+        eventDate = new Date(),
+        requestEventDate_1 = dateFormat(eventDate, 'yymmdd'),
+        requestEventDate_2 = dateFormat(eventDate, 'yymmdd'),
+        requestEventDate_3 = dateFormat(eventDate, 'yymmdd'),
+        requestEventNumber_1 = dateFormat(eventDate, 'HH'),
+        requestEventNumber_2 = dateFormat(eventDate, 'HH'),
+        requestEventNumber_3 = dateFormat(eventDate, 'HH');
+
+    // 6시간 단위 조건 값
+    switch (true) {
+        case (requestEventNumber_2 >= 0 && requestEventNumber_2 < 6):
+            eventDate.setDate(originalEventDate.getDate() - 1);
+            requestEventDate_2 = dateFormat(eventDate, 'yymmdd');
+            requestEventNumber_2 = '00';
+            break;
+        case (requestEventNumber_2 >= 6 && requestEventNumber_2 < 12):
+            requestEventNumber_2 = '06';
+            break;
+        case (requestEventNumber_2 >= 12 && requestEventNumber_2 < 18):
+            requestEventNumber_2 = '12';
+            break;
+        case (requestEventNumber_2 >= 18 && requestEventNumber_2 <= 23):
+            requestEventNumber_2 = '18';
+            break;
+    }
+
+    // 12시간 단위 조건 값
+    switch (true) {
+        case (requestEventNumber_3 >= 0 && requestEventNumber_3 < 12):
+            eventDate.setDate(originalEventDate.getDate() - 1);
+            requestEventDate_3 = dateFormat(eventDate, 'yymmdd');
+            requestEventNumber_3 = '00';
+            break;
+        case (requestEventNumber_3 >= 12 && requestEventNumber_3 <= 23):
+            requestEventNumber_3 = '12';
+            break;
+    }
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: 'SELECT EVENT_TYPE, CONCAT(CONCAT("20", EVENT_DATE), CONCAT("-", EVENT_NUMBER)) AS EVENT_DATE_HOUR, WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \
+                WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, BONUS_NUMBER \
+                FROM WINNING_INFO \
+                WHERE EVENT_TYPE = ? \
+                AND EVENT_DATE = ? \
+                AND EVENT_NUMBER = ? \
+                \
+                UNION ALL\
+                \
+                SELECT EVENT_TYPE, CONCAT(CONCAT("20", EVENT_DATE), CONCAT("-", EVENT_NUMBER)) AS EVENT_DATE_HOUR, WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \
+                WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, BONUS_NUMBER \
+                FROM WINNING_INFO \
+                WHERE EVENT_TYPE = ? \
+                AND EVENT_DATE = ? \
+                AND EVENT_NUMBER = ? \
+                \
+                UNION ALL\
+                \
+                SELECT EVENT_TYPE, CONCAT(CONCAT("20", EVENT_DATE), CONCAT("-", EVENT_NUMBER)) AS EVENT_DATE_HOUR, WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \
+                WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, BONUS_NUMBER \
+                FROM WINNING_INFO \
+                WHERE EVENT_TYPE = ? \
+                AND EVENT_DATE = ? \
+                AND EVENT_NUMBER = ?',
+                timeout: 10000
+            },
+            ['1', requestEventDate_1, requestEventNumber_1,
+                '2', requestEventDate_2, requestEventNumber_2,
+                '3', requestEventDate_3, requestEventNumber_3
+            ],
+            function (error, results, columns) {
+                connection.release();
+
+                if (error) {
+                    logger().info('당첨 번호 조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                    return res.json({
+                        isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage,
+                        results: [{
+                            EVENT_TYPE: '', WINNING_NUMBER_1: 0, WINNING_NUMBER_2: 0, WINNING_NUMBER_3: 0,
+                            WINNING_NUMBER_4: 0, WINNING_NUMBER_5: 0, WINNING_NUMBER_6: 0, BONUS_NUMBER: 0
+                        }]
+                    });
+                }
+
+                if (!results.length) {
+                    return res.json({
+                        isSuccess: false, errorMessage: "당첨 번호가 존재하지 않습니다.",
+                        results: [{
+                            EVENT_TYPE: '', WINNING_NUMBER_1: 0, WINNING_NUMBER_2: 0, WINNING_NUMBER_3: 0,
+                            WINNING_NUMBER_4: 0, WINNING_NUMBER_5: 0, WINNING_NUMBER_6: 0, BONUS_NUMBER: 0
+                        }]
+                    });
+                }
+
+                return res.json({isSuccess: true, errorMessage: "", results: results});
+            });
+    });
+};
+
 exports.details_of_participation = function (req, res) {
     var isValidatedToken = tokenCheck.check(req),
         requestPhoneNumber;
@@ -233,81 +383,45 @@ exports.details_of_all_participation = function (req, res) {
         requestEventDate_3 = dateFormat(eventDate, 'yymmdd'),
         requestEventNumber_1 = dateFormat(eventDate, 'HH'),
         requestEventNumber_2 = dateFormat(eventDate, 'HH'),
-        requestEventNumber_3 = dateFormat(eventDate, 'HH'),
-        requestConfirmStatus = req.query.confirm_status;
+        requestEventNumber_3 = dateFormat(eventDate, 'HH');
 
-    if (requestConfirmStatus === undefined) return res.json({isSuccess: false, errorMessage: "조회하려는 추첨여부를 입력해주세요."});
-    if (requestConfirmStatus === 'false') {
-        requestConfirmStatus = false;
-        // 1시간 단위 조건 값
-        requestEventNumber_1++;
-        requestEventNumber_1 = requestEventNumber_1 < 10 ? '0' + requestEventNumber_1 : requestEventNumber_1;
-        if (requestEventNumber_1 === 24) {
+    // 1시간 단위 조건 값
+    requestEventNumber_1++;
+    requestEventNumber_1 = requestEventNumber_1 < 10 ? '0' + requestEventNumber_1 : requestEventNumber_1;
+    if (requestEventNumber_1 === 24) {
+        eventDate.setDate(originalEventDate.getDate() + 1);
+        requestEventDate_1 = dateFormat(eventDate, 'yymmdd');
+        requestEventNumber_1 = '00';
+    }
+
+    // 6시간 단위 조건 값
+    switch (true) {
+        case (requestEventNumber_2 >= 0 && requestEventNumber_2 < 6):
+            requestEventNumber_2 = '06';
+            break;
+        case (requestEventNumber_2 >= 6 && requestEventNumber_2 < 12):
+            requestEventNumber_2 = '12';
+            break;
+        case (requestEventNumber_2 >= 12 && requestEventNumber_2 < 18):
+            requestEventNumber_2 = '18';
+            break;
+        case (requestEventNumber_2 >= 18 && requestEventNumber_2 <= 23):
             eventDate.setDate(originalEventDate.getDate() + 1);
-            requestEventDate_1 = dateFormat(eventDate, 'yymmdd');
-            requestEventNumber_1 = '00';
-        }
+            requestEventDate_2 = dateFormat(eventDate, 'yymmdd');
+            requestEventNumber_2 = '00';
+            break;
+    }
 
-        // 6시간 단위 조건 값
-        switch (true) {
-            case (requestEventNumber_2 >= 0 && requestEventNumber_2 < 6):
-                requestEventNumber_2 = '06';
-                break;
-            case (requestEventNumber_2 >= 6 && requestEventNumber_2 < 12):
-                requestEventNumber_2 = '12';
-                break;
-            case (requestEventNumber_2 >= 12 && requestEventNumber_2 < 18):
-                requestEventNumber_2 = '18';
-                break;
-            case (requestEventNumber_2 >= 18 && requestEventNumber_2 <= 23):
-                eventDate.setDate(originalEventDate.getDate() + 1);
-                requestEventDate_2 = dateFormat(eventDate, 'yymmdd');
-                requestEventNumber_2 = '00';
-                break;
-        }
-
-        // 12시간 단위 조건 값
-        switch (true) {
-            case (requestEventNumber_3 >= 0 && requestEventNumber_3 < 12):
-                requestEventNumber_3 = '12';
-                break;
-            case (requestEventNumber_3 >= 12 && requestEventNumber_3 <= 23):
-                eventDate.setDate(originalEventDate.getDate() + 1);
-                requestEventDate_3 = dateFormat(eventDate, 'yymmdd');
-                requestEventNumber_3 = '00';
-                break;
-        }
-    } else {
-        requestConfirmStatus = true;
-        // 6시간 단위 조건 값
-        switch (true) {
-            case (requestEventNumber_2 >= 0 && requestEventNumber_2 < 6):
-                eventDate.setDate(originalEventDate.getDate() -1);
-                requestEventDate_2 = dateFormat(eventDate, 'yymmdd');
-                requestEventNumber_2 = '00';
-                break;
-            case (requestEventNumber_2 >= 6 && requestEventNumber_2 < 12):
-                requestEventNumber_2 = '06';
-                break;
-            case (requestEventNumber_2 >= 12 && requestEventNumber_2 < 18):
-                requestEventNumber_2 = '12';
-                break;
-            case (requestEventNumber_2 >= 18 && requestEventNumber_2 <= 23):
-                requestEventNumber_2 = '18';
-                break;
-        }
-
-        // 12시간 단위 조건 값
-        switch (true) {
-            case (requestEventNumber_3 >= 0 && requestEventNumber_3 < 12):
-                eventDate.setDate(originalEventDate.getDate() - 1);
-                requestEventDate_3 = dateFormat(eventDate, 'yymmdd');
-                requestEventNumber_3 = '12';
-                break;
-            case (requestEventNumber_3 >= 12 && requestEventNumber_3 <= 23):
-                requestEventNumber_3 = '00';
-                break;
-        }
+    // 12시간 단위 조건 값
+    switch (true) {
+        case (requestEventNumber_3 >= 0 && requestEventNumber_3 < 12):
+            requestEventNumber_3 = '12';
+            break;
+        case (requestEventNumber_3 >= 12 && requestEventNumber_3 <= 23):
+            eventDate.setDate(originalEventDate.getDate() + 1);
+            requestEventDate_3 = dateFormat(eventDate, 'yymmdd');
+            requestEventNumber_3 = '00';
+            break;
     }
 
     pool.getConnection(function (err, connection) {
@@ -320,7 +434,7 @@ exports.details_of_all_participation = function (req, res) {
                 AND EVENT_DATE = ? \
                 AND EVENT_NUMBER = ? \
                 AND PHONE_NUMBER = ? \
-                AND CONFIRM_STATUS = ? \
+                AND CONFIRM_STATUS = 0 \
                 \
                 UNION ALL\
                 \
@@ -331,7 +445,7 @@ exports.details_of_all_participation = function (req, res) {
                 AND EVENT_DATE = ? \
                 AND EVENT_NUMBER = ? \
                 AND PHONE_NUMBER = ? \
-                AND CONFIRM_STATUS = ? \
+                AND CONFIRM_STATUS = 0 \
                 \
                 UNION ALL\
                 \
@@ -342,12 +456,12 @@ exports.details_of_all_participation = function (req, res) {
                 AND EVENT_DATE = ? \
                 AND EVENT_NUMBER = ? \
                 AND PHONE_NUMBER = ? \
-                AND CONFIRM_STATUS = ?',
+                AND CONFIRM_STATUS = 0',
                 timeout: 10000
             },
-            ['1', requestEventDate_1, requestEventNumber_1, requestPhoneNumber, requestConfirmStatus,
-                '2', requestEventDate_2, requestEventNumber_2, requestPhoneNumber, requestConfirmStatus,
-                '3', requestEventDate_3, requestEventNumber_3, requestPhoneNumber, requestConfirmStatus
+            ['1', requestEventDate_1, requestEventNumber_1, requestPhoneNumber,
+                '2', requestEventDate_2, requestEventNumber_2, requestPhoneNumber,
+                '3', requestEventDate_3, requestEventNumber_3, requestPhoneNumber
             ],
             function (error, results, columns) {
                 connection.release();
@@ -356,8 +470,10 @@ exports.details_of_all_participation = function (req, res) {
                     logger().info('참여내역조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
                     return res.json({
                         isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage,
-                        results: [{EVENT_TYPE: "", WINNING_NUMBER_1: 0, WINNING_NUMBER_2: 0, WINNING_NUMBER_3: 0,
-                            WINNING_NUMBER_4: 0, WINNING_NUMBER_5: 0, WINNING_NUMBER_6: 0, PARTICIPATING_TIME: ''}
+                        results: [{
+                            EVENT_TYPE: "", WINNING_NUMBER_1: 0, WINNING_NUMBER_2: 0, WINNING_NUMBER_3: 0,
+                            WINNING_NUMBER_4: 0, WINNING_NUMBER_5: 0, WINNING_NUMBER_6: 0, PARTICIPATING_TIME: ''
+                        }
                         ]
                     });
                 }
@@ -365,8 +481,10 @@ exports.details_of_all_participation = function (req, res) {
                 if (!results.length) {
                     return res.json({
                         isSuccess: false, errorMessage: "참가내역이 존재하지 않습니다.",
-                        results: [{EVENT_TYPE: '', WINNING_NUMBER_1: 0, WINNING_NUMBER_2: 0, WINNING_NUMBER_3: 0,
-                            WINNING_NUMBER_4: 0, WINNING_NUMBER_5: 0, WINNING_NUMBER_6: 0, PARTICIPATING_TIME: ''}]
+                        results: [{
+                            EVENT_TYPE: '', WINNING_NUMBER_1: 0, WINNING_NUMBER_2: 0, WINNING_NUMBER_3: 0,
+                            WINNING_NUMBER_4: 0, WINNING_NUMBER_5: 0, WINNING_NUMBER_6: 0, PARTICIPATING_TIME: ''
+                        }]
                     });
                 }
 
