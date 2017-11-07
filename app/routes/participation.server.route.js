@@ -5,6 +5,7 @@ module.exports = function(app){
     app.get('/details_of_winning_info', participation.details_of_winning_info);
     app.get('/details_of_all_winning_info', participation.details_of_all_winning_info);
     app.get('/details_of_participation', participation.details_of_participation);
+    app.get('/details_of_one_day_participation', participation.details_of_one_day_participation);
     app.get('/details_of_all_participation', participation.details_of_all_participation);
     app.route('/participation')
         .post(participation.participation);

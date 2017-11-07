@@ -13,17 +13,17 @@ var express = require(process.cwd() + '/config/express'),
 // │    │    └─────────────── hour (0 - 23)
 // │    └──────────────────── minute (0 - 59)
 // └───────────────────────── second (0 - 59, OPTIONAL)
-schedule.scheduleJob('0 * * * *', function () {
+/*schedule.scheduleJob('0 * * * *', function () {
     logger().info('매시간 마다 울리는 스케쥴러 작동');
     scheduleController.drawLottery('1', dateFormat(new Date(), 'yymmdd'), dateFormat(new Date(), 'HH'));
 });
 
-schedule.scheduleJob('0 */6 * * *', function () {
+schedule.scheduleJob('0 *!/6 * * *', function () {
     logger().info('6시간 마다 울리는 스케쥴러 작동');
     scheduleController.drawLottery('2', dateFormat(new Date(), 'yymmdd'), dateFormat(new Date(), 'HH'));
 });
 
-schedule.scheduleJob('0 */12 * * *', function () {
+schedule.scheduleJob('0 *!/12 * * *', function () {
     logger().info('12시간 마다 울리는 스케쥴러 작동');
     scheduleController.drawLottery('3', dateFormat(new Date(), 'yymmdd'), dateFormat(new Date(), 'HH'));
 });
@@ -31,7 +31,7 @@ schedule.scheduleJob('0 */12 * * *', function () {
 schedule.scheduleJob('0 21 * * 6', function () {
     logger().info('토요일 21시 마다 울리는 스케쥴러 작동');
     scheduleController.everySunday();
-});
+});*/
 
 var app = express();
 app.listen(3000);

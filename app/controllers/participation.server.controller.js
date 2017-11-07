@@ -166,8 +166,8 @@ exports.details_of_all_winning_info = function (req, res) {
     // 12시간 단위 조건 값
     switch (true) {
         case (requestEventNumber_3 >= 0 && requestEventNumber_3 < 12):
-            eventDate.setDate(originalEventDate.getDate() - 1);
-            requestEventDate_3 = dateFormat(eventDate, 'yymmdd');
+            //eventDate.setDate(originalEventDate.getDate() - 1);
+            //requestEventDate_3 = dateFormat(eventDate, 'yymmdd');
             requestEventNumber_3 = '00';
             break;
         case (requestEventNumber_3 >= 12 && requestEventNumber_3 <= 23):
@@ -354,6 +354,99 @@ exports.details_of_participation = function (req, res) {
                             WINNING_NUMBER_5: 0,
                             WINNING_NUMBER_6: 0,
                             PARTICIPATING_TIME: ""
+                        }]
+                    });
+                }
+
+                return res.json({isSuccess: true, errorMessage: "", results: results});
+            });
+    });
+};
+
+exports.details_of_one_day_participation = function (req, res) {
+    var isValidatedToken = tokenCheck.check(req),
+        requestPhoneNumber;
+
+    if (isValidatedToken) {
+        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
+        requestPhoneNumber = tokenData.phone_number;
+    } else {
+        return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
+    }
+
+    var requestEventDate = req.query.event_date;
+    if (!requestEventDate) return res.json({isSuccess: false, errorMessage: "조회하려는 날짜를 골라주세요."});
+
+    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: 'SELECT A.EVENT_TYPE, \
+                  CONCAT(CONCAT("20", A.EVENT_DATE), CONCAT("-", A.EVENT_NUMBER)) AS EVENT_DATE_HOUR, \
+                  IFNULL(WINNING_RATE, 9) AS WINNING_RATE, \
+                  A.WINNING_NUMBER_1, A.WINNING_NUMBER_2, A.WINNING_NUMBER_3, \
+                  A.WINNING_NUMBER_4, A.WINNING_NUMBER_5, A.WINNING_NUMBER_6, \
+                  CASE WINNING_RATE WHEN "1" THEN B.PRIZE_1 \
+                          WHEN "2" THEN B.PRIZE_2 \
+                          WHEN "3" THEN B.PRIZE_3 \
+                          WHEN "4" THEN B.PRIZE_4 \
+                          WHEN "5" THEN B.PRIZE_5 \
+                          ELSE 0 \
+                          END AS PRIZE, \
+                  A.PARTICIPATING_TIME, IFNULL(A.WINNING_TIME, "") AS WINNING_TIME \
+                FROM PARTICIPATION AS A \
+                LEFT JOIN WINNING_INFO AS B \
+                  ON A.EVENT_TYPE = B.EVENT_TYPE \
+                  AND A.EVENT_DATE = B.EVENT_DATE \
+                  AND A.EVENT_NUMBER = B.EVENT_NUMBER \
+                WHERE A.EVENT_DATE = ? \
+                AND A.PHONE_NUMBER = ? \
+                ORDER BY A.EVENT_DATE, A.EVENT_NUMBER, A.EVENT_TYPE',
+                timeout: 10000
+            },
+            [requestEventDate, requestPhoneNumber],
+            function (error, results, columns) {
+                connection.release();
+
+                if (error) {
+                    logger().info('참여내역조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                    return res.json({
+                        isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage,
+                        results: [{
+                            EVENT_TYPE: "",
+                            EVENT_DATE_HOUR: "",
+                            WINNING_RATE:"",
+                            WINNING_NUMBER_1: 0,
+                            WINNING_NUMBER_2: 0,
+                            WINNING_NUMBER_3: 0,
+                            WINNING_NUMBER_4: 0,
+                            WINNING_NUMBER_5: 0,
+                            WINNING_NUMBER_6: 0,
+                            PRIZE:0,
+                            PARTICIPATING_TIME: "",
+                            WINNING_TIME:"",
+                            CREATION_TIME:""
+                        }]
+                    });
+                }
+
+                if (!results.length) {
+                    return res.json({
+                        isSuccess: false, errorMessage: "참가내역이 존재하지 않습니다.",
+                        results: [{
+                            EVENT_TYPE: "",
+                            EVENT_DATE_HOUR: "",
+                            WINNING_RATE:"",
+                            WINNING_NUMBER_1: 0,
+                            WINNING_NUMBER_2: 0,
+                            WINNING_NUMBER_3: 0,
+                            WINNING_NUMBER_4: 0,
+                            WINNING_NUMBER_5: 0,
+                            WINNING_NUMBER_6: 0,
+                            PRIZE:0,
+                            PARTICIPATING_TIME: "",
+                            WINNING_TIME:"",
+                            CREATION_TIME:""
                         }]
                     });
                 }
@@ -596,10 +689,12 @@ exports.participation = function (req, res) {
                 connection.query({
                         sql: 'INSERT INTO PARTICIPATION (EVENT_TYPE, EVENT_DATE, EVENT_NUMBER, PHONE_NUMBER, \
                         WINNING_NUMBER_1, WINNING_NUMBER_2, WINNING_NUMBER_3, \
-                        WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6) \
+                        WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6,\
+                        PARTICIPATING_TIME) \
                         VALUES (?, ?, ?, ?, \
                         ?, ?, ?, \
-                        ?, ?, ?)',
+                        ?, ?, ?,\
+                        CURRENT_TIMESTAMP)',
                         timeout: 10000
                     },
                     [requestEventType, requestEventDate, requestEventNumber, requestPhoneNumber,

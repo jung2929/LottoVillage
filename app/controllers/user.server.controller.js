@@ -44,6 +44,53 @@ exports.retrievePoint = function (req, res) {
     });
 };
 
+exports.detailsOfPointHistory = function (req, res) {
+    var isValidatedToken = tokenCheck.check(req),
+        requestPhoneNumber;
+
+    if (isValidatedToken) {
+        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
+        requestPhoneNumber = tokenData.phone_number;
+    } else {
+        return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
+    }
+
+    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: 'SELECT SAVING_TIME, CASE SCORE_TYPE WHEN 0 THEN FALSE ELSE TRUE END SCORE_TYPE, SCORE \
+                FROM SCORE_DETAIL \
+                WHERE DATE_FORMAT(SAVING_TIME, \'%X%m\') = ? \
+                AND PHONE_NUMBER = ?',
+                timeout: 10000
+            },
+            [req.query.saving_time, requestPhoneNumber],
+            function (error, results, columns) {
+                connection.release();
+
+                if (error) {
+                    logger().info('포인트 내역 조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                    return res.json({
+                        isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage, results: [{
+                            SAVING_TIME:'0000-00-00 00:00:00', SCORE_TYPE:0, SCORE:0
+                        }]
+                    });
+                }
+
+                if (!results.length) {
+                    return res.json({
+                        isSuccess: false, errorMessage: "포인트 내역 정보가 존재하지 않습니다.", results: [{
+                            SAVING_TIME:'0000-00-00 00:00:00', SCORE_TYPE:0, SCORE:0
+                        }]
+                    });
+                }
+
+                return res.json({isSuccess: true, errorMessage: "", results: results});
+            });
+    });
+};
+
 exports.login = function (req, res) {
     var isValidatedToken = tokenCheck.check(req),
         requestPhoneNumber,
