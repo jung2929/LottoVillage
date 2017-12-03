@@ -49,10 +49,14 @@ module.exports = function () {
     app.set('views', process.cwd() + '/app/views');
     app.set('view engine', 'ejs');
 
+    // Mobile
     require(process.cwd() + '/app/routes/index.server.route')(app);
     require(process.cwd() + '/app/routes/product.server.route')(app);
     require(process.cwd() + '/app/routes/participation.server.route')(app);
     require(process.cwd() + '/app/routes/user.server.route')(app);
+
+    // Web
+    require(process.cwd() + '/app/web/routes/user.server.route')(app);
 
     app.use(express.static(process.cwd() + '/public'));
     return app;
