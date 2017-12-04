@@ -58,6 +58,7 @@ module.exports = function () {
     // Web
     require(process.cwd() + '/app/web/routes/user.server.route')(app);
     require(process.cwd() + '/app/web/routes/product.server.route')(app);
+    require(process.cwd() + '/app/web/routes/main.server.route')(app);
 
     app.use(express.static(process.cwd() + '/public'));
     return app;
