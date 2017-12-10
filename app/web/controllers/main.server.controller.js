@@ -1,10 +1,14 @@
 var pool = require(process.cwd() + '/config/maria.pool');
 
-/*[url : /anaylze_user]
+exports.main = function(req, res){
+    res.main('lottoVillage_main.html');
+};
+
+/*[url : /analyze_user]
     [response]
 - isSuccess (Boolean)
 - results {
-    user_tot_totay (int), // 오늘 가입자수
+    user_tot_today (int), // 오늘 가입자수
     user_tot (int), // 총 회원수(=총 가입자수)
     user_rate_login, // 회원 접속률 (= 오늘 로그인한 회원수/총 회원수)
 }*/

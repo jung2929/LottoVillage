@@ -1,12 +1,16 @@
 var pool = require(process.cwd() + '/config/maria.pool');
 
+exports.productManage = function(req, res){
+    res.productManage('lottoVillage_productManage.html');
+};
+
 exports.retrieveProductList = function (req, res) {
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: "SELECT PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, \
                   CASE PRODUCT_STATUS WHEN 1 THEN 'Y' \
                     ELSE 'N' END PRODUCT_STATUS \
-                    , PRODUCT_CONTENTS \
+                    , PRODUCT_CONTENTS, PRODUCT_CATEGORY \
                     FROM PRODUCT_MASTER",
                 timeout: 10000
             },
@@ -22,7 +26,7 @@ exports.retrieveProductList = function (req, res) {
     });
 };
 
-exports.insertProduct = function (req, res) {
+exports.registerProduct = function (req, res) {
     var requestProductCode,
         requestProductName,
         requestProductPrice,

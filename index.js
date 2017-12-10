@@ -1,6 +1,6 @@
 var express = require(process.cwd() + '/config/express'),
     schedule = require('node-schedule'),
-    scheduleController = require(process.cwd() + '/app/controllers/schedule.server.controller'),
+    scheduleController = require(process.cwd() + '/app/mobile/controllers/schedule.server.controller'),
     logger = require(process.cwd() + '/config/winston'),
     dateFormat = require('dateformat');
 

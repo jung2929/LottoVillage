@@ -1,0 +1,43 @@
+
+@import "variables.less";
+
+.bg-landing {
+  background: no-repeat center center;
+  background-image: url("../img/photos/landing.jpg");
+  //-webkit-background-size: cover;
+  //-moz-background-size: cover;
+  //-o-background-size: cover;
+  background-size: cover;
+  padding: 100px 0;
+
+  img {
+    position: relative;
+    margin: auto;
+    text-align: center;
+  }
+
+  p {
+    color: #ffffff;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: @screen-sm-min){
+    padding: 60px 0;
+
+    img {
+      width: 230px;
+    }
+  }
+}
+
+.login-btn {
+  height: 55px;
+  font-size: 15px;
+  // background-color: #41456a;
+  // 4b506f좀더 연한거
+
+}
+
+.footer {
+  margin: 15px 0;
+}

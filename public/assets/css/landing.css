@@ -1,0 +1,30 @@
+.bg-landing {
+  background: no-repeat center center;
+  background-image: url("../img/photos/landing.jpg");
+  background-size: cover;
+  padding: 100px 0;
+}
+.bg-landing img {
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+.bg-landing p {
+  color: #ffffff;
+  font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  .bg-landing {
+    padding: 60px 0;
+  }
+  .bg-landing img {
+    width: 230px;
+  }
+}
+.login-btn {
+  height: 55px;
+  font-size: 15px;
+}
+.footer {
+  margin: 15px 0;
+}

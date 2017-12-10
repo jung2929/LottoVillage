@@ -1,6 +1,20 @@
 var pool = require(process.cwd() + '/config/maria.pool');
 
-exports.loginWeb = function (req, res) {
+exports.userManage = function(req, res){
+    res.userManage('lottoVillage_userManage.html');
+};
+
+exports.userDetails = function(req, res){
+    res.userDetails('lottoVillage_userDetails.html');
+};
+
+// loginAdmin GET
+exports.loginAdmin = function(req, res){
+    res.loginAdmin('lottoVillage_loginAdmin.html');
+};
+
+// loginAdmin POST
+exports.loginAdmin = function (req, res) {
     var requestPhoneNumber,
         requestPassword;
 

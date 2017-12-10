@@ -1,0 +1,10 @@
+.logo img {
+    width: 100%;
+    padding: 0 15px;
+}
+
+@media screen and (max-width: 768px){
+    .logo img {
+        width: 150px;
+    }
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9 no-focus" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-focus" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Lotto Village 관리자용 상품관리 페이지</title>
+
+  <meta name="description" content="OneUI - Admin Dashboard Template & UI Framework created by pixelcave and published on Themeforest">
+  <meta name="author" content="pixelcave">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+
+  <!-- Icons -->
+  <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+  <link rel="shortcut icon" href="assets/img/favicons/favicon.png">
+
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon-192x192.png" sizes="192x192">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon-180x180.png">
+  <!-- END Icons -->
+
+  <!-- Web fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+  <!-- Page JS Plugins CSS go here -->
+
+  <!-- Bootstrap and OneUI CSS framework -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" id="css-main" href="assets/css/oneui.min.css">
+
+  <link rel="stylesheet" href="assets/css/manage.css">
+  <link rel="stylesheet" href="assets/css/product.css">
+</head>
+
+<body>
+  <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <!-- Sidebar Scroll Container -->
+      <div id="sidebar-scroll">
+        <!-- Sidebar Content -->
+        <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
+        <div class="sidebar-content">
+          <!-- Side Header -->
+          <div class="side-header side-content bg-white-op">
+            <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+            <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
+              <i class="fa fa-times"></i>
+            </button>
+            <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
+
+            <a class="logo" href="lottoVillage_main.html">
+              <img src="assets/img/photos/logo.png">
+              <!--<span class="h4 font-w600 sidebar-mini-hide">L</span></i>-->
+              <!--<i class="fa fa-circle-o-notch text-primary"></i><span class="h4 font-w600 sidebar-mini-hide">TT</span></i> <i class="fa fa-circle-o-notch text-primary"></i><span class="h4 font-w600 sidebar-mini-hide"> VILLAGE</span>-->
+            </a>
+          </div>
+          <!-- END Side Header -->
+
+          <!-- Side Content -->
+          <div class="side-content side-content-full">
+            <ul class="nav-main">
+              <li>
+                <a href="lottoVillage_main.html"><i class="si si-bar-chart"></i><span class="sidebar-mini-hide">통계보기</span></a>
+              </li>
+              <li class="nav-main-heading"><span class="sidebar-mini-hide">Management</span></li>
+              <li>
+                <a href="lottoVillage_userManage.html"><i class="si si-users"></i><span class="sidebar-mini-hide">회원 관리</span></a>
+              </li>
+              <li>
+                <a href="lottoVillage_productManage.html"><i class="si si-present"></i><span class="sidebar-mini-hide">상품 관리</span></a>
+              </li>
+              <li class="nav-main-heading"><span class="sidebar-mini-hide">Counsel</span></li>
+              <li>
+                <a href="lottoVillage_counselManage.html"><i class="si si-question"></i><span class="sidebar-mini-hide">상담 문의</span></a>
+              </li>
+            </ul>
+          </div>
+          <!-- END Side Content -->
+        </div>
+        <!-- Sidebar Content -->
+      </div>
+      <!-- END Sidebar Scroll Container -->
+    </nav>
+    <!-- END Sidebar -->
+
+    <!-- Header -->
+    <header id="header-navbar" class="content-mini content-mini-full">
+      <!-- Header Navigation Right -->
+      <div class="nav-header pull-right">
+        <button class="btn btn-default" type="button">
+          <a href="lottoVillage_loginAdmin.html">로그아웃</a>
+        </button>
+      </div>
+      <!-- END Header Navigation Right -->
+
+      <!-- Header Navigation Left -->
+      <ul class="nav-header pull-left">
+        <li class="hidden-md hidden-lg">
+          <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+          <button class="btn btn-default" data-toggle="layout" data-action="sidebar_toggle" type="button">
+            <i class="fa fa-navicon"></i>
+          </button>
+        </li>
+        <li class="hidden-xs hidden-sm">
+          <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+          <button class="btn btn-default" data-toggle="layout" data-action="sidebar_mini_toggle" type="button">
+            <i class="fa fa-ellipsis-v"></i>
+          </button>
+        </li>
+      </ul>
+      <!-- END Header Navigation Left -->
+    </header>
+    <!-- END Header -->
+
+    <!-- Main Container -->
+    <main id="main-container">
+      <!-- Page Header -->
+      <div class="content bg-gray-lighter">
+        <div class="row items-push">
+          <div class="col-sm-7">
+            <h1 class="page-heading">
+                        상품관리 <small>Reward Admin</small>
+                    </h1>
+          </div>
+          <div class="col-sm-5 text-right hidden-xs">
+            <ol class="breadcrumb push-10-t">
+              <li>ADMIN</li>
+              <li>상품관리</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!-- END Page Header -->
+
+      <!-- Page Content -->
+      <div class="content">
+        <!-- My Block -->
+        <div class="block">
+          <div id="productList" class="row" style="background-color: #f5f5f5;">
+            <div class="col-sm-6 col-lg-3">
+
+              <a class="block block-link-hover2 text-center" href="javascript:void(0)">
+                <div class="block-header">
+                  <h3 class="block-title">초코파이</h3>
+                </div>
+                <div class="block-content block-content-full bg-warning">
+                  <div class="h1 font-w700 push-10">2000p</div>
+                </div>
+                <div class="block-content">
+                  <table class="table table-borderless table-condensed">
+                    <tbody>
+                      <tr>
+                        <td>No. <strong id="product_code">1</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Category <strong>오리온</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Description <strong>이 상품은 ...</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="block-content block-content-mini block-content-full bg-gray-lighter">
+                  <span class="btn btn-default" data-toggle="modal" data-target="#modifyModal">수정</span>
+                  <span id="deleteProduct" class="btn btn-default" data-toggle="modal" data-target="#deleteModal">삭제</span>
+                </div>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+        <!-- END My Block -->
+      </div>
+      <!-- END Page Content -->
+
+      <!-- floating icon -->
+      <a href="lottoVillage_productRegister.html" class="addProductIcon">
+        <i class="fa fa-plus"></i>
+      </a>
+    </main>
+    <!-- END Main Container -->
+
+    <!-- Modify Modal-->
+    <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="modifyModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modifyModalLabel" align="center">상품을 수정하시겠습니까?</h5>
+          </div>
+          <div class="modal-body" align="center">
+            <a class="btn btn-primary" href="lottoVillage_productModify.html">예</a>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">아니오</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logout Modal-->
+    <!--<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">-->
+      <!--<div class="modal-dialog" role="document">-->
+        <!--<div class="modal-content">-->
+          <!--<div class="modal-header">-->
+            <!--<h5 class="modal-title" id="deleteModalLabel" align="center">정말로 삭제 하시겠습니까?</h5>-->
+            <!--<button class="close" type="button" data-dismiss="modal" aria-label="Close">-->
+                  <!--<span aria-hidden="true">×</span>-->
+              <!--</button>-->
+          <!--</div>-->
+          <!--<div class="modal-body" align="center">-->
+            <!--<a class="btn btn-primary" href="#">예</a>-->
+            <!--<button class="btn btn-secondary" type="button" data-dismiss="modal">아니오</button>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  </div>
+  <!-- END Page Container -->
+
+  <!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
+  <script src="assets/js/oneui.min.js"></script>
+
+  <!-- Page JS Plugins + Page JS Code -->
+
+  <script src="assets/js/lottoVillage_product.js"></script>
+</body>
+
+</html>

@@ -46,20 +46,23 @@ module.exports = function () {
         secret: 'developmentSessionSecret'
     }));*/
 
-    app.set('views', process.cwd() + '/app/views');
+    app.set('views', process.cwd() + '/app/web/views');
     app.set('view engine', 'ejs');
 
     // Mobile
-    require(process.cwd() + '/app/routes/index.server.route')(app);
-    //require(process.cwd() + '/app/routes/product.server.route')(app);
-    require(process.cwd() + '/app/routes/participation.server.route')(app);
-    require(process.cwd() + '/app/routes/user.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/algorithm.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/index.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/participation.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/product.server.route')(app);
+    require(process.cwd() + '/app/mobile/routes/user.server.route')(app);
 
     // Web
-    require(process.cwd() + '/app/web/routes/user.server.route')(app);
-    require(process.cwd() + '/app/web/routes/product.server.route')(app);
+    require(process.cwd() + '/app/web/routes/index.server.route')(app);
     require(process.cwd() + '/app/web/routes/main.server.route')(app);
+    require(process.cwd() + '/app/web/routes/product.server.route')(app);
+    require(process.cwd() + '/app/web/routes/user.server.route')(app);
 
     app.use(express.static(process.cwd() + '/public'));
+
     return app;
 };
