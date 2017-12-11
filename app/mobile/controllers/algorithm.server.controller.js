@@ -50,13 +50,13 @@ exports.prediction_algorithm = function (req, res) {
                 return a - b;
             });
             console.log('선택 알고리즘 결과 : %j', lottoPredictionNumbers);
-            predictionResult.requestPredictionNumber1 = lottoPredictionNumbers[0];
-            predictionResult.requestPredictionNumber2 = lottoPredictionNumbers[1];
-            predictionResult.requestPredictionNumber3 = lottoPredictionNumbers[2];
-            predictionResult.requestPredictionNumber4 = lottoPredictionNumbers[3];
-            predictionResult.requestPredictionNumber5 = lottoPredictionNumbers[4];
-            predictionResult.requestPredictionNumber6 = lottoPredictionNumbers[5];
-            predictionResult.requestBonusNumber = lottoPredictionNumbers[6];
+            predictionResult.requestPredictionNumber1 = Number(lottoPredictionNumbers[0]);
+            predictionResult.requestPredictionNumber2 = Number(lottoPredictionNumbers[1]);
+            predictionResult.requestPredictionNumber3 = Number(lottoPredictionNumbers[2]);
+            predictionResult.requestPredictionNumber4 = Number(lottoPredictionNumbers[3]);
+            predictionResult.requestPredictionNumber5 = Number(lottoPredictionNumbers[4]);
+            predictionResult.requestPredictionNumber6 = Number(lottoPredictionNumbers[5]);
+            predictionResult.requestBonusNumber = Number(lottoPredictionNumbers[6]);
 
             res.json({isSuccess: true, errorMessage: " ", results: predictionResult});
             break;
