@@ -22,7 +22,8 @@ exports.prediction_algorithm = function (req, res) {
     var options = {
         mode: 'text',
         pythonPath: '/usr/bin/python',
-        scriptPath: '/home/Tues_4team/svr/src0.9/LottoVillage/Server/config/algorithm/'
+        //scriptPath: '/home/Tues_4team/svr/src0.9/LottoVillage/Server/config/algorithm/'
+        scriptPath: '/home/ubuntu/lottoVillage/config/algorithm/'
     };
 
     switch (requestAlgorithmType) {
