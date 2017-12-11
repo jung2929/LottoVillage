@@ -165,10 +165,21 @@ exports.deleteUser = function (req, res) {
 };
 
 exports.updateUser = function (req, res) {
+    var isValidatedToken = tokenCheck.check(req),
+        requestPhoneNumber;
+
+    if (isValidatedToken) {
+        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
+        requestPhoneNumber = tokenData.phone_number;
+    } else {
+        return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
+    }
+
+    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
+
     var requestName = req.body.name,
         requestPassword = req.body.password,
-        requestPasswordConfirm = req.body.password_confirm,
-        requestPhoneNumber = req.body.phone_number;
+        requestPasswordConfirm = req.body.password_confirm;
 
     if (!requestName) return res.json({isSuccess: false, errorMessage: "이름을 입력해주세요."});
     if (!requestPassword) return res.json({isSuccess: false, errorMessage: "비밀번호를 입력해주세요."});
@@ -178,7 +189,6 @@ exports.updateUser = function (req, res) {
     requestName = requestName.replace(/(\s*)/g, "");
     requestPassword = requestPassword.replace(/(\s*)/g, "");
     requestPasswordConfirm = requestPasswordConfirm.replace(/(\s*)/g, "");
-    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
 
     if (requestName.length < 3 || requestName.length > 10) return res.json({
         isSuccess: false,

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d4c7ade0-248a-428c-a3be-555f34076ca7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js" afterPath="$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js" />
-      <change beforePath="$PROJECT_DIR$/app/mobile/routes/user.server.route.js" afterPath="$PROJECT_DIR$/app/mobile/routes/user.server.route.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,14 +49,15 @@
       <file leaf-file-name="user.server.controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="54" column="47" lean-forward="false" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+            <state relative-caret-position="-470">
+              <caret line="190" column="74" lean-forward="false" selection-start-line="190" selection-start-column="74" selection-end-line="190" selection-end-column="74" />
               <folding>
                 <element signature="e#288#1710#0" expanded="false" />
+                <element signature="e#1760#3092#0" expanded="false" />
                 <element signature="e#3147#4950#0" expanded="false" />
                 <element signature="e#4994#6006#0" expanded="false" />
-                <element signature="e#6050#9297#0" expanded="false" />
-                <element signature="e#13110#15548#0" expanded="false" />
+                <element signature="e#9634#13365#0" expanded="false" />
+                <element signature="e#13407#15845#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -409,12 +409,12 @@
       <workItem from="1512905543594" duration="956000" />
       <workItem from="1512909325839" duration="3521000" />
       <workItem from="1512923949735" duration="352000" />
-      <workItem from="1512952914337" duration="2412000" />
+      <workItem from="1512952914337" duration="2520000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251839000" />
+    <option name="totallyTimeSpent" value="251947000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -759,14 +759,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="54" column="47" lean-forward="false" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+        <state relative-caret-position="-470">
+          <caret line="190" column="74" lean-forward="false" selection-start-line="190" selection-start-column="74" selection-end-line="190" selection-end-column="74" />
           <folding>
             <element signature="e#288#1710#0" expanded="false" />
+            <element signature="e#1760#3092#0" expanded="false" />
             <element signature="e#3147#4950#0" expanded="false" />
             <element signature="e#4994#6006#0" expanded="false" />
-            <element signature="e#6050#9297#0" expanded="false" />
-            <element signature="e#13110#15548#0" expanded="false" />
+            <element signature="e#9634#13365#0" expanded="false" />
+            <element signature="e#13407#15845#0" expanded="false" />
           </folding>
         </state>
       </provider>
