@@ -21,7 +21,7 @@ exports.prediction_algorithm = function (req, res) {
     // 시스템에 따라 경로 설정하기
     var options = {
         mode: 'text',
-        pythonPath: '/usr/bin/python3',
+        pythonPath: '/usr/bin/python3.5',
         //scriptPath: '/home/Tues_4team/svr/src0.9/LottoVillage/Server/config/algorithm/'
         scriptPath: '/home/ubuntu/lottoVillage/config/algorithm/'
     };
@@ -33,7 +33,6 @@ exports.prediction_algorithm = function (req, res) {
                     logger().info('알고리즘 결과 데이터 수신 오류 - 에러내용 : ' + err.message);
                 }
                 console.log('선택 알고리즘 결과 : %j', results);
-                predictionResult.requestPredictionNumber1 = 1;
                 predictionResult.requestPredictionNumber1 = Number(results[0]);
                 predictionResult.requestPredictionNumber2 = Number(results[1]);
                 predictionResult.requestPredictionNumber3 = Number(results[2]);
