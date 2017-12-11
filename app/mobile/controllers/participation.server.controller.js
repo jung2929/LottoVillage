@@ -469,26 +469,25 @@ exports.details_of_all_participation = function (req, res) {
 
     requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
 
-    var requestEventFromDate = req.query.event_date + '01';
-    var requestEventToDate = req.query.event_date + '31';
+    var originalEventDate = new Date(),
+        eventDate = new Date(),
+        requestEventDate_1 = dateFormat(eventDate, 'yymmdd'),
+        requestEventDate_2 = dateFormat(eventDate, 'yymmdd'),
+        requestEventDate_3 = dateFormat(eventDate, 'yymmdd'),
+        requestEventNumber_1 = dateFormat(eventDate, 'HH'),
+        requestEventNumber_2 = dateFormat(eventDate, 'HH'),
+        requestEventNumber_3 = dateFormat(eventDate, 'HH');
 
-    /*var originalEventDate = new Date(),
-        eventDate = new Date(),*/
-
-        //requestEventNumber_1 = dateFormat(eventDate, 'HH'),
-        //requestEventNumber_2 = dateFormat(eventDate, 'HH'),
-        //requestEventNumber_3 = dateFormat(eventDate, 'HH');
-
-    /*// 1시간 단위 조건 값
+    // 1시간 단위 조건 값
     requestEventNumber_1++;
     requestEventNumber_1 = requestEventNumber_1 < 10 ? '0' + requestEventNumber_1 : requestEventNumber_1;
     if (requestEventNumber_1 === 24) {
         eventDate.setDate(originalEventDate.getDate() + 1);
         requestEventDate_1 = dateFormat(eventDate, 'yymmdd');
         requestEventNumber_1 = '00';
-    }*/
+    }
 
-    /*// 6시간 단위 조건 값
+    // 6시간 단위 조건 값
     switch (true) {
         case (requestEventNumber_2 >= 0 && requestEventNumber_2 < 6):
             requestEventNumber_2 = '06';
@@ -504,9 +503,9 @@ exports.details_of_all_participation = function (req, res) {
             requestEventDate_2 = dateFormat(eventDate, 'yymmdd');
             requestEventNumber_2 = '00';
             break;
-    }*/
+    }
 
-    /*// 12시간 단위 조건 값
+    // 12시간 단위 조건 값
     switch (true) {
         case (requestEventNumber_3 >= 0 && requestEventNumber_3 < 12):
             requestEventNumber_3 = '12';
@@ -516,7 +515,7 @@ exports.details_of_all_participation = function (req, res) {
             requestEventDate_3 = dateFormat(eventDate, 'yymmdd');
             requestEventNumber_3 = '00';
             break;
-    }*/
+    }
 
     pool.getConnection(function (err, connection) {
         connection.query({
@@ -525,9 +524,10 @@ exports.details_of_all_participation = function (req, res) {
                 WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, PARTICIPATING_TIME \
                 FROM PARTICIPATION \
                 WHERE EVENT_TYPE = ? \
-                AND EVENT_DATE >= ? \
-                AND EVENT_DATE <= ? \
+                AND EVENT_DATE = ? \
+                AND EVENT_NUMBER = ? \
                 AND PHONE_NUMBER = ? \
+                AND CONFIRM_STATUS = 0 \
                 \
                 UNION ALL\
                 \
@@ -535,9 +535,10 @@ exports.details_of_all_participation = function (req, res) {
                 WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, PARTICIPATING_TIME \
                 FROM PARTICIPATION \
                 WHERE EVENT_TYPE = ? \
-                AND EVENT_DATE >= ? \
-                AND EVENT_DATE <= ? \
+                AND EVENT_DATE = ? \
+                AND EVENT_NUMBER = ? \
                 AND PHONE_NUMBER = ? \
+                AND CONFIRM_STATUS = 0 \
                 \
                 UNION ALL\
                 \
@@ -545,14 +546,15 @@ exports.details_of_all_participation = function (req, res) {
                 WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, PARTICIPATING_TIME \
                 FROM PARTICIPATION \
                 WHERE EVENT_TYPE = ? \
-                AND EVENT_DATE >= ? \
-                AND EVENT_DATE <= ? \
-                AND PHONE_NUMBER = ? ',
+                AND EVENT_DATE = ? \
+                AND EVENT_NUMBER = ? \
+                AND PHONE_NUMBER = ? \
+                AND CONFIRM_STATUS = 0',
                 timeout: 10000
             },
-            ['1', requestEventFromDate, requestEventToDate, requestPhoneNumber,
-                '2', requestEventFromDate, requestEventToDate, requestPhoneNumber,
-                '3', requestEventFromDate, requestEventToDate, requestPhoneNumber
+            ['1', requestEventDate_1, requestEventNumber_1, requestPhoneNumber,
+                '2', requestEventDate_2, requestEventNumber_2, requestPhoneNumber,
+                '3', requestEventDate_3, requestEventNumber_3, requestPhoneNumber
             ],
             function (error, results, columns) {
                 connection.release();
