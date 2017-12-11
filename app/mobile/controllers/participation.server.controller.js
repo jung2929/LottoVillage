@@ -469,7 +469,7 @@ exports.details_of_all_participation = function (req, res) {
 
     requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
 
-    var requestEventDate = req.query.event_date + '01';
+    var requestEventDate = req.query.event_date.concat('01');
 
     /*var originalEventDate = new Date(),
         eventDate = new Date(),*/

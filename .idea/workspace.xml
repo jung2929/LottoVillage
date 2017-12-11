@@ -16,17 +16,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="participation.server.controller.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="participation.server.controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="458" column="0" lean-forward="false" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
+            <state relative-caret-position="278">
+              <caret line="471" column="61" lean-forward="true" selection-start-line="471" selection-start-column="61" selection-end-line="471" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="participation.server.route.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="participation.server.route.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mobile/routes/participation.server.route.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -379,12 +379,12 @@
       <workItem from="1512905543594" duration="956000" />
       <workItem from="1512909325839" duration="3521000" />
       <workItem from="1512923949735" duration="352000" />
-      <workItem from="1512952914337" duration="808000" />
+      <workItem from="1512952914337" duration="875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250235000" />
+    <option name="totallyTimeSpent" value="250302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -719,18 +719,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="458" column="0" lean-forward="false" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/mobile/routes/participation.server.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="471" column="61" lean-forward="true" selection-start-line="471" selection-start-column="61" selection-end-line="471" selection-end-column="61" />
           <folding />
         </state>
       </provider>
