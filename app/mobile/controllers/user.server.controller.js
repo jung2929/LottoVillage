@@ -248,6 +248,84 @@ exports.updateUser = function (req, res) {
     });
 };
 
+exports.insertUserProductList = function (req, res) {
+    var isValidatedToken = tokenCheck.check(req),
+        requestPhoneNumber,
+        requestProductCode = req.body.product_code,
+        requestProductPrice = req.body.product_price;
+
+    if (isValidatedToken) {
+        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
+        requestPhoneNumber = tokenData.phone_number;
+    } else {
+        return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
+    }
+
+    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
+
+    pool.getConnection(function (err, connection) {
+        connection.query({
+                sql: 'SELECT PERSONAL_SCORE \
+                FROM USER_INFO \
+                WHERE PHONE_NUMBER = ?\
+                LIMIT 1',
+                timeout: 10000
+            },
+            [requestPhoneNumber],
+            function (error, results, columns) {
+                if (error) {
+                    connection.release();
+                    logger().info('나의 포인트 조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                    return res.json({
+                        isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage});
+                }
+
+                if (!results.length) {
+                    connection.release();
+                    return res.json({
+                        isSuccess: false, errorMessage: "내 정보가 존재하지 않습니다."});
+                }
+
+                if (results[0].PERSONAL_SCORE < Number(requestProductPrice)) {
+                    return res.json({
+                        isSuccess: false, errorMessage: "보유한 포인트보다 상품 가격이 더 비싸므로 구매가 불가능합니다."});
+                }
+
+                connection.query({
+                        sql: 'INSERT INTO USER_PRODUCT_LIST (PHONE_NUMBER, PRODUCT_CODE, PRODUCT_EXPIRATION_DATE, USER_PRODUCT_STATUS, SAVING_TIME) \
+                            VALUES(?, ?, CURRENT_TIMESTAMP, ?, CURRENT_TIMESTAMP)',
+                        timeout: 10000
+                    },
+                    [requestPhoneNumber, requestProductCode, '1'],
+                    function (error, results, columns) {
+                        if (error) {
+                            connection.release();
+                            logger().info('나의 포인트 조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                            return res.json({
+                                isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage});
+                        }
+
+                        connection.query({
+                                sql: 'UPDATE USER_INFO \
+                                    SET PERSONAL_SCORE = PERSONAL_SCORE - ? \
+                                    WHERE PHONE_NUMBER = ?',
+                                timeout: 10000
+                            },
+                            [requestProductPrice, requestPhoneNumber],
+                            function (error, results, columns) {
+                                connection.release();
+                                if (error) {
+                                    logger().info('나의 포인트 조회 - 에러코드 : ' + error.code + ', 에러내용 : ' + error.sqlMessage);
+                                    return res.json({
+                                        isSuccess: false, errorMessage: "데이터베이스 오류 : " + error.sqlMessage});
+                                }
+
+                                return res.json({isSuccess: true, errorMessage: ""});
+                            });
+                    });
+            });
+    });
+};
 
 exports.login = function (req, res) {
     var isValidatedToken = tokenCheck.check(req),

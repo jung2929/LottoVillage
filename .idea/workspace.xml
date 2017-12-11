@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4c7ade0-248a-428c-a3be-555f34076ca7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js" afterPath="$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js" />
+      <change beforePath="$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js" afterPath="$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js" />
+      <change beforePath="$PROJECT_DIR$/app/mobile/routes/user.server.route.js" afterPath="$PROJECT_DIR$/app/mobile/routes/user.server.route.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,52 +17,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="product.server.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/mobile/routes/product.server.route.js">
+      <file leaf-file-name="user.server.route.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/mobile/routes/user.server.route.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="26" />
+            <state relative-caret-position="210">
+              <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="participation.server.controller.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js">
+      <file leaf-file-name="user.server.controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="participation.server.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/mobile/routes/participation.server.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="84" lean-forward="true" selection-start-line="5" selection-start-column="84" selection-end-line="5" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.server.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/mobile/controllers/product.server.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2265">
-              <caret line="151" column="59" lean-forward="true" selection-start-line="151" selection-start-column="59" selection-end-line="151" selection-end-column="59" />
-              <folding />
+            <state relative-caret-position="130">
+              <caret line="301" column="49" lean-forward="true" selection-start-line="301" selection-start-column="49" selection-end-line="301" selection-end-column="49" />
+              <folding>
+                <element signature="e#288#1710#0" expanded="false" />
+                <element signature="e#1760#3092#0" expanded="false" />
+                <element signature="e#3147#4950#0" expanded="false" />
+                <element signature="e#4994#6006#0" expanded="false" />
+                <element signature="e#6050#9594#0" expanded="false" />
+                <element signature="e#13204#16935#0" expanded="false" />
+                <element signature="e#16977#19415#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,6 +82,7 @@
       <find>lottoVillage_login</find>
       <find>details_of_all_participation</find>
       <find>details_of_all_winning_info</find>
+      <find>INSERT PRODUCT_LIST</find>
     </findStrings>
     <replaceStrings>
       <replace>number</replace>
@@ -167,11 +147,11 @@
         <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js" />
         <option value="$PROJECT_DIR$/app/web/controllers/product.server.controller.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/app/mobile/routes/user.server.route.js" />
-        <option value="$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js" />
         <option value="$PROJECT_DIR$/app/mobile/controllers/algorithm.server.controller.js" />
         <option value="$PROJECT_DIR$/app/mobile/controllers/product.server.controller.js" />
         <option value="$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js" />
+        <option value="$PROJECT_DIR$/app/mobile/routes/user.server.route.js" />
+        <option value="$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js" />
       </list>
     </option>
   </component>
@@ -420,12 +400,12 @@
       <workItem from="1512905543594" duration="956000" />
       <workItem from="1512909325839" duration="3521000" />
       <workItem from="1512923949735" duration="352000" />
-      <workItem from="1512952914337" duration="7110000" />
+      <workItem from="1512952914337" duration="8701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256537000" />
+    <option name="totallyTimeSpent" value="258128000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -438,7 +418,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -509,12 +489,19 @@
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js</url>
+          <line>288</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="48" />
+      <option name="time" value="49" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
         <watch expression="requestPhoneNumber" />
+        <watch expression="results[0].PERSONAL_SOCRE" />
       </configuration>
     </watches-manager>
   </component>
@@ -752,45 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mobile/routes/user.server.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="166" column="14" lean-forward="true" selection-start-line="166" selection-start-column="14" selection-end-line="166" selection-end-column="14" />
-          <folding>
-            <element signature="e#288#1710#0" expanded="false" />
-            <element signature="e#1760#3092#0" expanded="false" />
-            <element signature="e#3147#4950#0" expanded="false" />
-            <element signature="e#4994#6006#0" expanded="false" />
-            <element signature="e#9634#13365#0" expanded="false" />
-            <element signature="e#13407#15845#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mobile/controllers/product.server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2265">
-          <caret line="151" column="59" lean-forward="true" selection-start-line="151" selection-start-column="59" selection-end-line="151" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mobile/routes/product.server.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/mobile/routes/participation.server.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -809,9 +757,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="342">
           <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mobile/routes/product.server.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mobile/routes/user.server.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mobile/controllers/product.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="151" column="59" lean-forward="true" selection-start-line="151" selection-start-column="59" selection-end-line="151" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="301" column="49" lean-forward="true" selection-start-line="301" selection-start-column="49" selection-end-line="301" selection-end-column="49" />
+          <folding>
+            <element signature="e#288#1710#0" expanded="false" />
+            <element signature="e#1760#3092#0" expanded="false" />
+            <element signature="e#3147#4950#0" expanded="false" />
+            <element signature="e#4994#6006#0" expanded="false" />
+            <element signature="e#6050#9594#0" expanded="false" />
+            <element signature="e#13204#16935#0" expanded="false" />
+            <element signature="e#16977#19415#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

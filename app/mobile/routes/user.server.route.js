@@ -11,4 +11,6 @@ module.exports = function(app){
 		.post(user.login);
 	app.route('/register')
 		.post(user.register);
+    app.route('/buy_product')
+        .post(user.insertUserProductList);
 };
