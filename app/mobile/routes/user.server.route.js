@@ -6,6 +6,7 @@ module.exports = function(app){
         .post(user.deleteUser);
     app.route('/update_user')
         .post(user.updateUser);
+    app.get('/retrieve_user_info', user.retrieveUserInfo);
 	app.route('/login')
 		.post(user.login);
 	app.route('/register')
