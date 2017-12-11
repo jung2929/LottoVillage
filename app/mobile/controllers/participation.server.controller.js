@@ -148,8 +148,8 @@ exports.details_of_all_winning_info = function (req, res) {
     // 6시간 단위 조건 값
     switch (true) {
         case (requestEventNumber_2 >= 0 && requestEventNumber_2 < 6):
-            eventDate.setDate(originalEventDate.getDate() - 1);
-            requestEventDate_2 = dateFormat(eventDate, 'yymmdd');
+            //eventDate.setDate(originalEventDate.getDate() - 1);
+            //requestEventDate_2 = dateFormat(eventDate, 'yymmdd');
             requestEventNumber_2 = '00';
             break;
         case (requestEventNumber_2 >= 6 && requestEventNumber_2 < 12):
