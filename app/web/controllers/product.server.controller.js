@@ -8,9 +8,9 @@ exports.retrieveProductList = function (req, res) {
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: "SELECT PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, \
-                  CASE PRODUCT_STATUS WHEN 1 THEN 'Y' \
-                    ELSE 'N' END PRODUCT_STATUS \
-                    , PRODUCT_CONTENTS, PRODUCT_CATEGORY \
+                  PRODUCT_STATUS , \
+                  PRODUCT_CONTENTS, \
+                  PRODUCT_CATEGORY \
                     FROM PRODUCT_MASTER",
                 timeout: 10000
             },
@@ -27,21 +27,18 @@ exports.retrieveProductList = function (req, res) {
 };
 
 exports.registerProduct = function (req, res) {
-    var requestProductCode,
-        requestProductName,
+    var requestProductName,
         requestProductPrice,
         requestProductStatus,
         requestProductContents,
         requestProductCategory;
 
-    requestProductCode = req.body.product_code;
     requestProductName = req.body.product_name;
     requestProductPrice = req.body.product_price;
     requestProductStatus = req.body.product_status;
     requestProductContents = req.body.product_contents;
     requestProductCategory = req.body.product_category;
 
-    if (!requestProductCode) return res.json({isSuccess: false});
     if (!requestProductName) return res.json({isSuccess: false});
     if (!requestProductPrice) return res.json({isSuccess: false});
     if (!requestProductStatus) return res.json({isSuccess: false});
@@ -50,11 +47,11 @@ exports.registerProduct = function (req, res) {
 
     pool.getConnection(function (err, connection) {
         connection.query({
-                sql: "INSERT INTO PRODUCT_MASTER(PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_STATUS, PRODUCT_CONTENTS, PRODUCT_CATEGORY) \
-                    VALUES (?, ?, ?, ?, ?, ?)",
+                sql: "INSERT INTO PRODUCT_MASTER(PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_STATUS, PRODUCT_CONTENTS, PRODUCT_CATEGORY) \
+                    VALUES (?, ?, ?, ?, ?)",
                 timeout: 10000
             },
-            [requestProductCode, requestProductName, requestProductPrice, requestProductStatus, requestProductContents, requestProductCategory],
+            [requestProductName, requestProductPrice, requestProductStatus, requestProductContents, requestProductCategory],
             function (error, results, columns) {
                 connection.release();
                 if (error) {

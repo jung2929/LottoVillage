@@ -18,7 +18,7 @@ schedule.scheduleJob('0 * * * *', function () {
     scheduleController.drawLottery('1', dateFormat(new Date(), 'yymmdd'), dateFormat(new Date(), 'HH'));
 });
 
-schedule.scheduleJob('0 *!/6 * * *', function () {
+schedule.scheduleJob('0 */6 * * *', function () {
     logger().info('6시간 마다 울리는 스케쥴러 작동');
     scheduleController.drawLottery('2', dateFormat(new Date(), 'yymmdd'), dateFormat(new Date(), 'HH'));
 });
