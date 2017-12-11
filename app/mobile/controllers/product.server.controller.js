@@ -3,21 +3,21 @@ var logger = require(process.cwd() + '/config/winston'),
     tokenCheck = require(process.cwd() + '/app/mobile/controllers/token.server.controller'),
     jwt = require('jsonwebtoken');
 
-exports.render = function(req, res){
-	/*if (req.session.visit){
-		req.session.lastVisit = req.session.visit;
-		req.session.visit = new Date();
-	}
+exports.render = function (req, res) {
+    /*if (req.session.visit){
+        req.session.lastVisit = req.session.visit;
+        req.session.visit = new Date();
+    }
 
-	req.session.visit = new Date();
-	console.log('접속시간 : ' + req.session.visit);
+    req.session.visit = new Date();
+    console.log('접속시간 : ' + req.session.visit);
 
-	if (req.session.lastVisit !== undefined) {
-		console.log('마지막접속시간 : ' + req.session.lastVisit)
-	}*/
-	res.render('index', {
-		title: 'Hello EJS World'
-	})
+    if (req.session.lastVisit !== undefined) {
+        console.log('마지막접속시간 : ' + req.session.lastVisit)
+    }*/
+    res.render('index', {
+        title: 'Hello EJS World'
+    })
 };
 
 /*exports.reward_list_info = function (req, res) {
@@ -130,16 +130,19 @@ exports.render = function(req, res){
 };*/
 
 exports.retrieveProductList = function (req, res) {
+    var requestProductCategory = req.query.product_category;
+
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: "SELECT PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, \
                   CASE PRODUCT_STATUS WHEN 1 THEN 'Y' \
                     ELSE 'N' END PRODUCT_STATUS \
-                    , PRODUCT_CONTENTS, PRODUCT_CATEGORY \
-                    FROM PRODUCT_MASTER",
+                    , PRODUCT_CONTENTS \
+                    FROM PRODUCT_MASTER \
+                    WHERE PRODUCT_CATEGORY = ?",
                 timeout: 10000
             },
-            [],
+            [requestProductCategory],
             function (error, results, columns) {
                 connection.release();
                 if (error) {
