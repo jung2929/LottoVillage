@@ -21,7 +21,7 @@ exports.prediction_algorithm = function (req, res) {
     // 시스템에 따라 경로 설정하기
     var options = {
         mode: 'text',
-        pythonPath: '/usr/bin/python',
+        pythonPath: '/usr/bin/python3',
         //scriptPath: '/home/Tues_4team/svr/src0.9/LottoVillage/Server/config/algorithm/'
         scriptPath: '/home/ubuntu/lottoVillage/config/algorithm/'
     };
