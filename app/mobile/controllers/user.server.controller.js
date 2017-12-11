@@ -92,15 +92,22 @@ exports.detailsOfPointHistory = function (req, res) {
 };
 
 exports.deleteUser = function (req, res) {
-    var requestPhoneNumber;
+    var isValidatedToken = tokenCheck.check(req),
+        requestPhoneNumber;
 
-    requestPhoneNumber = req.body.phone_number;
+    if (isValidatedToken) {
+        var tokenData = jwt.verify(req.headers["x-access-token"], 'developmentTokenSecret');
+        requestPhoneNumber = tokenData.phone_number;
+    } else {
+        return res.json({isSuccess: false, errorMessage: "토큰이 만료되었습니다."});
+    }
 
-    if (!requestPhoneNumber) return res.json({isSuccess: false});
+    requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
 
     pool.getConnection(function (err, connection) {
         connection.query({
-                sql: "DELETE FROM USER_INFO \
+                sql: "UPDATE USER_INFO \
+                    SET USER_STATUS = '1' \
                     WHERE PHONE_NUMBER = ?",
                 timeout: 10000
             },
@@ -223,7 +230,7 @@ exports.login = function (req, res) {
 
     pool.getConnection(function (err, connection) {
         connection.query({
-                sql: 'SELECT PK_ID, PHONE_NUMBER, PASSWORD \
+                sql: 'SELECT PK_ID, PHONE_NUMBER, PASSWORD, USER_STATUS \
                   FROM USER_INFO \
                   WHERE PHONE_NUMBER = ? \
                   AND PASSWORD = ?',
@@ -240,6 +247,11 @@ exports.login = function (req, res) {
                 if (!results.length) {
                     connection.release();
                     return res.json({isSuccess: false, errorMessage: "전화번호 혹은 비밀번호가 일치하지 않습니다."});
+                }
+
+                if (results[0].USER_STATUS === "1") {
+                    connection.release();
+                    return res.json({isSuccess: false, errorMessage: "탈퇴한 계정입니다."});
                 }
 
                 if (!isValidatedToken) tokenValue = jwt.sign(

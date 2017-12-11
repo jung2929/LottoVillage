@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4c7ade0-248a-428c-a3be-555f34076ca7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js" afterPath="$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js" />
+      <change beforePath="$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js" afterPath="$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +16,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="participation.server.controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.server.route.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/mobile/routes/user.server.route.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="participation.server.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="529" column="40" lean-forward="true" selection-start-line="529" selection-start-column="40" selection-end-line="529" selection-end-column="40" />
+            <state relative-caret-position="250">
+              <caret line="537" column="36" lean-forward="true" selection-start-line="537" selection-start-column="36" selection-end-line="537" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -32,6 +42,22 @@
             <state relative-caret-position="120">
               <caret line="8" column="76" lean-forward="true" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.server.controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="253" column="84" lean-forward="true" selection-start-line="253" selection-start-column="84" selection-end-line="253" selection-end-column="84" />
+              <folding>
+                <element signature="e#288#1710#0" expanded="false" />
+                <element signature="e#1765#3568#0" expanded="false" />
+                <element signature="e#3612#4624#0" expanded="false" />
+                <element signature="e#4668#7915#0" expanded="false" />
+                <element signature="e#11728#14166#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,6 +95,7 @@
       <find>53:65004</find>
       <find>/login</find>
       <find>details_of_all_participation</find>
+      <find>delete_user</find>
     </findStrings>
     <replaceStrings>
       <replace>number</replace>
@@ -134,6 +161,7 @@
         <option value="$PROJECT_DIR$/app/web/controllers/product.server.controller.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js" />
+        <option value="$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js" />
       </list>
     </option>
   </component>
@@ -379,12 +407,12 @@
       <workItem from="1512905543594" duration="956000" />
       <workItem from="1512909325839" duration="3521000" />
       <workItem from="1512923949735" duration="352000" />
-      <workItem from="1512952914337" duration="1662000" />
+      <workItem from="1512952914337" duration="1978000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251089000" />
+    <option name="totallyTimeSpent" value="251405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -663,14 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2895">
-          <caret line="193" column="0" lean-forward="false" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/express.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -683,14 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="54" column="29" lean-forward="true" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mobile/routes/user.server.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -729,9 +741,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="529" column="40" lean-forward="true" selection-start-line="529" selection-start-column="40" selection-end-line="529" selection-end-column="40" />
+        <state relative-caret-position="250">
+          <caret line="537" column="36" lean-forward="true" selection-start-line="537" selection-start-column="36" selection-end-line="537" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mobile/routes/user.server.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="253" column="84" lean-forward="true" selection-start-line="253" selection-start-column="84" selection-end-line="253" selection-end-column="84" />
+          <folding>
+            <element signature="e#288#1710#0" expanded="false" />
+            <element signature="e#1765#3568#0" expanded="false" />
+            <element signature="e#3612#4624#0" expanded="false" />
+            <element signature="e#4668#7915#0" expanded="false" />
+            <element signature="e#11728#14166#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
