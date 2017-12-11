@@ -469,7 +469,8 @@ exports.details_of_all_participation = function (req, res) {
 
     requestPhoneNumber = requestPhoneNumber.replace(/(\s*)/g, "");
 
-    var requestEventDate = req.query.event_date.concat('01');
+    var requestEventFromDate = req.query.event_date + '01';
+    var requestEventToDate = req.query.event_date + '31';
 
     /*var originalEventDate = new Date(),
         eventDate = new Date(),*/
@@ -524,7 +525,8 @@ exports.details_of_all_participation = function (req, res) {
                 WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, PARTICIPATING_TIME \
                 FROM PARTICIPATION \
                 WHERE EVENT_TYPE = ? \
-                AND EVENT_DATE = ? \
+                AND EVENT_DATE >= ? \
+                AND EVENT_DATE <= ? \
                 AND PHONE_NUMBER = ? \
                 \
                 UNION ALL\
@@ -533,7 +535,8 @@ exports.details_of_all_participation = function (req, res) {
                 WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, PARTICIPATING_TIME \
                 FROM PARTICIPATION \
                 WHERE EVENT_TYPE = ? \
-                AND EVENT_DATE = ? \
+                AND EVENT_DATE >= ? \
+                AND EVENT_DATE <= ? \
                 AND PHONE_NUMBER = ? \
                 \
                 UNION ALL\
@@ -542,13 +545,14 @@ exports.details_of_all_participation = function (req, res) {
                 WINNING_NUMBER_4, WINNING_NUMBER_5, WINNING_NUMBER_6, PARTICIPATING_TIME \
                 FROM PARTICIPATION \
                 WHERE EVENT_TYPE = ? \
-                AND EVENT_DATE = ? \
+                AND EVENT_DATE >= ? \
+                AND EVENT_DATE <= ? \
                 AND PHONE_NUMBER = ? ',
                 timeout: 10000
             },
-            ['1', requestEventDate, requestPhoneNumber,
-                '2', requestEventDate, requestPhoneNumber,
-                '3', requestEventDate, requestPhoneNumber
+            ['1', requestEventFromDate, requestEventToDate, requestPhoneNumber,
+                '2', requestEventFromDate, requestEventToDate, requestPhoneNumber,
+                '3', requestEventFromDate, requestEventToDate, requestPhoneNumber
             ],
             function (error, results, columns) {
                 connection.release();
