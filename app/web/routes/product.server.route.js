@@ -4,7 +4,7 @@ module.exports = function(app){
     app.get('/product_manage', product.productManage);
 
     // 상품 조회 페이지
-    app.get('/product_list', product.retrieveProductList);
+    app.get('/product_list_web', product.retrieveProductListWeb);
 
     // 상품 등록
     app.route('/product_register')

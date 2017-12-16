@@ -4,7 +4,7 @@ exports.productManage = function(req, res){
     res.productManage('lottoVillage_productManage.html');
 };
 
-exports.retrieveProductList = function (req, res) {
+exports.retrieveProductListWeb = function (req, res) {
     pool.getConnection(function (err, connection) {
         connection.query({
                 sql: "SELECT PRODUCT_CODE, PRODUCT_NAME, PRODUCT_PRICE, \

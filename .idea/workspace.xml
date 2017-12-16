@@ -2,7 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4c7ade0-248a-428c-a3be-555f34076ca7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_dashboard_v2.js" afterPath="$PROJECT_DIR$/public/assets/js/pages/base_pages_dashboard_v2.js" />
+      <change beforePath="$PROJECT_DIR$/app/web/controllers/product.server.controller.js" afterPath="$PROJECT_DIR$/app/web/controllers/product.server.controller.js" />
+      <change beforePath="$PROJECT_DIR$/app/web/routes/product.server.route.js" afterPath="$PROJECT_DIR$/app/web/routes/product.server.route.js" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js" afterPath="$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/lottoVillage_login.js" afterPath="$PROJECT_DIR$/public/assets/js/lottoVillage_login.js" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/lottoVillage_product.js" afterPath="$PROJECT_DIR$/public/assets/js/lottoVillage_product.js" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js" afterPath="$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js" afterPath="$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_animations.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_calendar.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_chartjs_v2.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_charts.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_image_cropper.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_maps.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_maps_full.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_maps_vector.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_rating.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_treeview.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_forms_pickers_more.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_forms_validation.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_forms_wizard.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_coming_soon.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_coming_soon_v2.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_dashboard.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_dashboard_v2.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_ecom_dashboard.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_files.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_lock.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_login.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_projects_view.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_register.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_reminder.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_tables_datatables.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_ui_activity.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_ui_chat.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_ui_icons.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_ui_widgets.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/frontend_contact.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/frontend_features.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/frontend_travel_package.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/img/logo.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/lottoVillage_productManage.html" afterPath="$PROJECT_DIR$/public/lottoVillage_productManage.html" />
+      <change beforePath="$PROJECT_DIR$/public/lottoVillage_productRegister.html" afterPath="$PROJECT_DIR$/public/lottoVillage_productRegister.html" />
+      <change beforePath="$PROJECT_DIR$/public/test.html" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,21 +58,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="lottoVillage_userManage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js">
+      <file leaf-file-name="lottoVillage_product.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_product.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="35" />
+            <state relative-caret-position="60">
+              <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base_pages_dashboard_v2.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/pages/base_pages_dashboard_v2.js">
+      <file leaf-file-name="lottoVillage_login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lottoVillage_userManage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lottoVillage_userDetails.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+              <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lottoVillage_productModify.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/lottoVillage_productModify.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="296" column="45" lean-forward="false" selection-start-line="296" selection-start-column="25" selection-end-line="296" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lottoVillage_productManage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/lottoVillage_productManage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="203" column="42" lean-forward="false" selection-start-line="203" selection-start-column="42" selection-end-line="203" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lottoVillage_charts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lottoVillage_productModify.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_productModify.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_pages_dashboard_v2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/base_pages_dashboard_v2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.server.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/web/controllers/product.server.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-356">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,9 +170,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>first</find>
-      <find>password</find>
-      <find>body</find>
       <find>process.cwd</find>
       <find>name</find>
       <find>no</find>
@@ -76,7 +195,11 @@
       <find>INSERT PRODUCT_LIST</find>
       <find>lottoVillage_login.js</find>
       <find>localhost</find>
+      <find>product_list</find>
+      <find>retrieveProductList</find>
+      <find>product_code</find>
       <find>192.9.44.53</find>
+      <find>:3000</find>
     </findStrings>
     <replaceStrings>
       <replace>number</replace>
@@ -127,25 +250,28 @@
         <option value="$PROJECT_DIR$/app/web/controllers/user.server.controller.js" />
         <option value="$PROJECT_DIR$/app/routes/product.server.route.js" />
         <option value="$PROJECT_DIR$/app/controllers/product.server.controller.js" />
-        <option value="$PROJECT_DIR$/app/web/routes/product.server.route.js" />
         <option value="$PROJECT_DIR$/app/web/routes/main.server.route.js" />
         <option value="$PROJECT_DIR$/app/web/controllers/main.server.controller.js" />
         <option value="$PROJECT_DIR$/app/routes/index.server.route.js" />
         <option value="$PROJECT_DIR$/app/controllers/index.server.controller.js" />
         <option value="$PROJECT_DIR$/config/express.js" />
-        <option value="$PROJECT_DIR$/app/web/controllers/product.server.controller.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/app/mobile/controllers/algorithm.server.controller.js" />
         <option value="$PROJECT_DIR$/app/mobile/controllers/product.server.controller.js" />
         <option value="$PROJECT_DIR$/app/mobile/controllers/participation.server.controller.js" />
         <option value="$PROJECT_DIR$/app/mobile/routes/user.server.route.js" />
         <option value="$PROJECT_DIR$/app/mobile/controllers/user.server.controller.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_login.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_product.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js" />
         <option value="$PROJECT_DIR$/public/assets/js/pages/base_pages_dashboard_v2.js" />
+        <option value="$PROJECT_DIR$/app/web/controllers/product.server.controller.js" />
+        <option value="$PROJECT_DIR$/app/web/routes/product.server.route.js" />
+        <option value="$PROJECT_DIR$/public/lottoVillage_productRegister.html" />
+        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_productModify.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/base_pages_dashboard_v2.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_product.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_login.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js" />
       </list>
     </option>
   </component>
@@ -253,12 +379,6 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LottoVillageServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LottoVillageServer" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -407,12 +527,12 @@
       <workItem from="1513137316662" duration="111000" />
       <workItem from="1513182597714" duration="55000" />
       <workItem from="1513182873655" duration="11000" />
-      <workItem from="1513399791220" duration="1333000" />
+      <workItem from="1513399791220" duration="3379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259729000" />
+    <option name="totallyTimeSpent" value="261775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -500,8 +620,26 @@
           <line>288</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/web/controllers/product.server.controller.js</url>
+          <line>23</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/web/controllers/product.server.controller.js</url>
+          <line>20</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/mobile/controllers/product.server.controller.js</url>
+          <line>151</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="49" />
+      <option name="time" value="54" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -511,23 +649,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logs/2017-08-30.log" />
-    <entry file="file://$PROJECT_DIR$/app/controllers/lotto.server.controller.js" />
-    <entry file="file://$PROJECT_DIR$/app/routes/lotto.server.route.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/layer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="94" column="4" lean-forward="false" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Ch03_1.html" />
     <entry file="file://$PROJECT_DIR$/config/winston.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -537,13 +658,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.ejs" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/token.server.controller.js" />
     <entry file="file://$PROJECT_DIR$/app/controllers/participation.server.controller.js" />
     <entry file="file://$PROJECT_DIR$/app/routes/user.server.route.js" />
@@ -590,13 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/web/routes/product.server.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/web/routes/user.server.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -615,13 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="54" column="29" lean-forward="true" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/web/controllers/product.server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -674,25 +774,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mobile/routes/product.server.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/mobile/routes/user.server.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="40" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mobile/controllers/product.server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="151" column="59" lean-forward="true" selection-start-line="151" selection-start-column="59" selection-end-line="151" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -728,14 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/lottoVillage_loginAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
@@ -752,50 +830,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        <state relative-caret-position="465">
+          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_login.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="35" />
+        <state relative-caret-position="-44">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/pages/base_pages_dashboard_v2.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/web/routes/product.server.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="65" lean-forward="false" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mobile/routes/product.server.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mobile/controllers/product.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="131" column="27" lean-forward="false" selection-start-line="131" selection-start-column="8" selection-end-line="131" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/web/controllers/product.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-356">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lottoVillage_productRegister.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-804">
+          <caret line="218" column="47" lean-forward="false" selection-start-line="218" selection-start-column="31" selection-end-line="218" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lottoVillage_productModify.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="296" column="45" lean-forward="false" selection-start-line="296" selection-start-column="25" selection-end-line="296" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lottoVillage_productManage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="203" column="42" lean-forward="false" selection-start-line="203" selection-start-column="42" selection-end-line="203" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_productModify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/base_pages_dashboard_v2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
           <folding />
         </state>
       </provider>

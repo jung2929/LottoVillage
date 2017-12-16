@@ -1,12 +1,10 @@
 $(window).ready(function() {
-    reward.init();
+    product.init();
 });
 
-//var url = "http://localhost:3000/";
 var url = "http://13.124.207.144/";
-//var url = "http://192.9.44.53:65004/";
 
-var reward = {
+var product = {
     init: function() {
         this.getProductList();
         this.initEvent();
@@ -15,9 +13,9 @@ var reward = {
     initEvent: function() {
         var _this = this;
 
+        $(document).on('click touchend','.productUpdateBtn', this.gotoProductModify);
         $(document).on('click touchend','.productRegistBtn', this.postProductRegister);
         $(document).on('click touchend','.productDeleteBtn', this.postProductDelete);
-        $(document).on('click touchend','.productUpdateBtn', this.postProductUpdate);
     },
 
     drawProductTable : function(productData){
@@ -59,11 +57,13 @@ var reward = {
                     categoryTag = 'bg-warning';
             }
 
-            switch(Number(product.PRODUCT_STATUS)){
-                case 0:
+            switch(product.PRODUCT_STATUS){
+                case '0':
+                case 'N':
                     status = '판매 중지';
                     break;
-                case 1:
+                case '1':
+                case 'Y':
                     status = '판매중';
                     break;
                 default:
@@ -73,27 +73,27 @@ var reward = {
             var viewProduct = $("<div class=\"col-sm-6 col-lg-3\">");
             viewProduct
                 .html(
-                    "              <a class=\"block block-link-hover2 text-center\" href=\"javascript:void(0)\">\n" +
+                    "              <a class=\"product_data block block-link-hover2 text-center\" href=\"javascript:void(0)\">\n" +
                     "                <div class=\"block-header\">\n" +
-                    "                  <h3 class=\"block-title\">" + product.PRODUCT_NAME + "</h3>\n" +
+                    "                  <h3 class=\"product_name block-title\">" + product.PRODUCT_NAME + "</h3>\n" +
                     "                </div>\n" +
                     "                <div class=\"block-content block-content-full " + categoryTag + "\">\n" +
-                    "                  <div class=\"h1 font-w700 push-10\">&#8361; " + product.PRODUCT_PRICE + "</div>\n" +
+                    "                  <div class=\"h1 font-w700 push-10\">&#8361; <span class=\"product_price\">" + product.PRODUCT_PRICE + "</span></div>\n" +
                     "                </div>\n" +
                     "                <div class=\"block-content\">\n" +
                     "                  <table class=\"table table-borderless table-condensed\">\n" +
                     "                    <tbody>\n" +
                     "                      <tr>\n" +
-                    "                        <td>No. <strong class=\"product_code\">" + product.PRODUCT_CODE + "</strong></td>\n" +
+                    "                        <td>Code. <strong class=\"product_code\">" + product.PRODUCT_CODE + "</strong></td>\n" +
                     "                      </tr>\n" +
                     "                      <tr>\n" +
-                    "                        <td>Category <strong>" + category + "</strong></td>\n" +
+                    "                        <td>Category <strong class=\"product_category\" data-category=\"" + product.PRODUCT_CATEGORY + "\">" + category + "</strong></td>\n" +
                     "                      </tr>\n" +
                     "                      <tr>\n" +
-                    "                        <td>Status <strong>" + status + "</strong></td>\n" +
+                    "                        <td>Status <strong class=\"product_status\" data-status=\"" + product.PRODUCT_STATUS + "\">" + status + "</strong></td>\n" +
                     "                      </tr>\n" +
                     "                      <tr>\n" +
-                    "                        <td>Description <strong>이 상품은 ...</strong></td>\n" +
+                    "                        <td>Description <br><strong class=\"product_contents\">" + product.PRODUCT_CONTENTS + "</strong></td>\n" +
                     "                      </tr>\n" +
                     "                    </tbody>\n" +
                     "                  </table>\n" +
@@ -116,7 +116,7 @@ var reward = {
             dataType: "json",
             success: function(resData) {
                 if (resData.isSuccess == true){
-                    reward.drawProductTable(resData.results);
+                    product.drawProductTable(resData.results);
                 } else {
                     console.log('get product list 실패 ');
                 }
@@ -144,7 +144,7 @@ var reward = {
                 product_code : parseInt($code.val()),
                 product_name : $name.val(),
                 product_price : parseInt($price.val()),
-                product_status : parseInt($status.val()),
+                product_status : $status.val(),
                 product_contents : $contents.val(),
                 product_category : $category.val()
             },
@@ -184,35 +184,15 @@ var reward = {
         });
     },
 
-    postProductUpdate: function() {
-        var $form = $('form[name=product_update]');
-        var $code = $form.find('input[name=product_code]');
-        var $name = $form.find('input[name=product_name]');
-        var $price = $form.find('input[name=product_price]');
-        var $status = $form.find('input[name=product_status]:checked');
-        var $category = $form.find('input[name=product_category]:checked');
-        var $contents = $form.find('input[name=product_contents]');
+    gotoProductModify: function() {
+        var product = $(this).closest(".product_data");
+        product.code = product.find(".product_code").text();
+        product.name = product.find(".product_name").text();
+        product.price = product.find(".product_price").text();
+        product.status = product.find(".product_status").data('status');
+        product.category = product.find(".product_category").data('category');
+        product.contents = product.find(".product_contents").text();
 
-        $.ajax({
-            type: "POST",
-            url: url + 'product_update',
-            dataType: "json",
-            data: {
-                product_name : $name.val(),
-                product_price : parseInt($price.val()),
-                product_status : $status.val(),
-                product_contents : $category.val(),
-                product_category : $contents.val(),
-                product_code : parseInt($code.val())
-            },
-            success: function(resData) {
-                if (resData.isSuccess == true){
-                    window.location.href = '/lottoVillage_productManage.html';
-                }
-            },
-            error: function(request,status,error){
-                alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-            }
-        });
+        window.location.href = '/lottoVillage_productModify.html?code=' + product.code + '&name=' + product.name + '&price=' + product.price + '&status=' + product.status + '&category=' + product.category + '&contents=' + product.contents;
     }
 };
