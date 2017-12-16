@@ -7,7 +7,8 @@ var phone = location.href.substr(
     location.href.lastIndexOf('=') + 1
 );
 
-var url = "http://localhost:3000/";
+//var url = "http://localhost:3000/";
+var url = "http://13.124.207.144/";
 //var url = "http://192.9.44.53:65004/";
 
 var userDetails = {
