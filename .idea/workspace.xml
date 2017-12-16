@@ -2,49 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4c7ade0-248a-428c-a3be-555f34076ca7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/web/controllers/product.server.controller.js" afterPath="$PROJECT_DIR$/app/web/controllers/product.server.controller.js" />
-      <change beforePath="$PROJECT_DIR$/app/web/routes/product.server.route.js" afterPath="$PROJECT_DIR$/app/web/routes/product.server.route.js" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js" afterPath="$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/lottoVillage_login.js" afterPath="$PROJECT_DIR$/public/assets/js/lottoVillage_login.js" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/lottoVillage_product.js" afterPath="$PROJECT_DIR$/public/assets/js/lottoVillage_product.js" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js" afterPath="$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js" afterPath="$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_animations.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_calendar.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_chartjs_v2.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_charts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_image_cropper.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_maps.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_maps_full.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_maps_vector.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_rating.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_comp_treeview.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_forms_pickers_more.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_forms_validation.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_forms_wizard.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_coming_soon.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_coming_soon_v2.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_dashboard.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_dashboard_v2.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_ecom_dashboard.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_files.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_lock.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_login.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_projects_view.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_register.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_pages_reminder.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_tables_datatables.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_ui_activity.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_ui_chat.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_ui_icons.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/base_ui_widgets.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/frontend_contact.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/frontend_features.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/frontend_travel_package.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/img/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/lottoVillage_productManage.html" afterPath="$PROJECT_DIR$/public/lottoVillage_productManage.html" />
-      <change beforePath="$PROJECT_DIR$/public/lottoVillage_productRegister.html" afterPath="$PROJECT_DIR$/public/lottoVillage_productRegister.html" />
-      <change beforePath="$PROJECT_DIR$/public/test.html" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -58,12 +16,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="lottoVillage_product.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lottoVillage_product.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_product.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-              <folding />
+            <state relative-caret-position="68">
+              <caret line="114" column="42" lean-forward="true" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
+              <folding>
+                <marker date="1513408092165" expanded="true" signature="2777:2784" ph="&amp;##8361;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lottoVillage_userDetails.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lottoVillage_userDetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+              <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -268,10 +228,10 @@
         <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_charts.js" />
         <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_productModify.js" />
         <option value="$PROJECT_DIR$/public/assets/js/base_pages_dashboard_v2.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_product.js" />
         <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_login.js" />
         <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_userManage.js" />
         <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/lottoVillage_product.js" />
       </list>
     </option>
   </component>
@@ -527,12 +487,12 @@
       <workItem from="1513137316662" duration="111000" />
       <workItem from="1513182597714" duration="55000" />
       <workItem from="1513182873655" duration="11000" />
-      <workItem from="1513399791220" duration="3379000" />
+      <workItem from="1513399791220" duration="3448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261775000" />
+    <option name="totallyTimeSpent" value="261844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -934,14 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -961,8 +913,18 @@
     <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_userDetails.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/lottoVillage_product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="114" column="42" lean-forward="true" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
+          <folding>
+            <marker date="1513408092165" expanded="true" signature="2777:2784" ph="&amp;##8361;" />
+          </folding>
         </state>
       </provider>
     </entry>

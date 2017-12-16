@@ -112,7 +112,7 @@ var product = {
     getProductList: function() {
         $.ajax({
             type: "GET",
-            url: url + 'product_list',
+            url: url + 'product_list_web',
             dataType: "json",
             success: function(resData) {
                 if (resData.isSuccess == true){
